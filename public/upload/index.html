@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SpawnHero 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/styles/app.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <div class="top-bar-title">
+          <h2>
+            <span class="title">
+              <a href="/">SpawnHero 2</a>
+            </span>
+            <span class="subtitle">
+              <a href="/">Games</a>
+              <a href="/build">Set Up</a>
+              <a href="/docs">Docs</a>
+            </span>
+          </h2>
+        </div><!--top-bar-title-->
+      </div>
+    </div><!--top-bar-->
+  </header>
+
+  <div class='content'>
+
+    <div class="hero-container">
+      <div class="hero">
+        <h1 class="hero-title">Upload a Game</h1>
+        <p class="hero-paragraph">Copy and Paste the code from your <span>something.js</span> into the form below to add your game level to this website!</p>
+      </div><!--.banner-->
+    </div><!--.banner-container-->
+
+    <div class="standard-container">
+      <form id="upload_form" action="">
+        <div class="row">
+          <div class="small-12 columns">
+            <label for="game-title">Game Title
+              <input type="text" name="title" id="game-title" placeholder="Game Title">
+            </label>
+          </div>
+          <div class="small-12 columns">
+            <label for="game-developer">Game Developer Name
+              <input type="text" name="developer" id="game-developer" placeholder="Your Name">
+            </label>
+          </div>
+          <div class="small-12 columns">
+            <label for="game-code">Game Code
+              <textarea id="game-code" name="code" placeholder="Paste all code from game.js here."></textarea>
+            </label>
+          </div>
+          <!-- <div class="small-12 columns"> -->
+          <!--   <label for="file-upload" class="button">Upload File</label> -->
+          <!--   <input type="file" name="file" id="file-upload" class="show-for-sr"> -->
+          <!-- </div> -->
+          <div class="small-12 columns">
+            <div class="submit-game-footer">
+              <input type="submit" class="submit-game-button" value="Submit Your Game">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div><!--#content-->
+
+  <div class="footer-container">
+    <div class="row">
+      <div class='small-12 columns'>
+        <div class="footer">
+          <p><a href="http://stem.gomagames.com">stem.gomagames.com</a></p>
+        </div><!--.footer-->
+      </div>
+    </div><!--.row-->
+  </div><!--.footer-container-->
+
+  <script src="/scripts/jquery.js"></script>
+  <script src="/scripts/what-input.js"></script>
+  <script src="/scripts/foundation.js"></script>
+  <script src="/scripts/app.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src="/scripts/upload.js"></script>
+</body>
+</html>

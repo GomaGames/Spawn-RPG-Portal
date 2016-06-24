@@ -1,0 +1,27 @@
+{
+  "name": "spawn-hero-rpg",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-sass": "^2.2.0"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/gomagraphics/spawn-rpg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/gomagraphics/spawn-rpg#readme",
+  "dependencies": {
+    "gulp-autoprefixer": "^3.1.0"
+  },
+  "description": ""
+}

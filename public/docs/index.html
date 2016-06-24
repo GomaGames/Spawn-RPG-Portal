@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SpawnHero 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/styles/app.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <div class="top-bar-title">
+          <h2>
+            <span class="title">
+              <a href="/">SpawnHero 2</a>
+            </span>
+            <span class="subtitle">
+              <a href="/">Games</a>
+              <a href="/build">Set Up</a>
+              <a href="/docs">Docs</a>
+            </span>
+          </h2>
+        </div><!--top-bar-title-->
+      </div>
+    </div><!--top-bar-->
+  </header>
+
+  <div class='content'>
+
+    <!--<div class="banner-container">
+      <div class="banner">
+        <div class="banner-image" style="background-image:url('http://placehold.it/1300x500/')">
+        </div>
+      </div>
+    </div>-->
+
+    <div class="hero-container">
+      <div class="hero">
+        <h1 class="hero-title">SpawnHero 2: Documentation</h1>
+        <!-- <p class="hero-paragraph">Below are the resources you will need to build a level for SpawnHero 2.</p> -->
+        <!-- <a href="/upload" class="upload-button">Upload a Game</a> -->
+      </div><!--.banner-->
+    </div><!--.banner-container-->
+
+    <div class="standard-container">
+      <div class="row">
+        <div class="small-12 large-8 columns">
+          <h2>
+            SpawnHero 2
+          </h2>
+
+          <p>The only file that needs to be edited is the <strong style="">game.js</strong> file. The game.js file is initially blank. All you need to do is start adding code!</p>
+
+          <!-- DOCS -->
+
+<h2>Game Rules</h2>
+<p>At minimum, the game requires <em>hero_1</em>, <em>hero_2</em>, and at least 1 <em>gem</em> in order for the game to be winnable.</p>
+<h3>The Win Condition</h3>
+<p>The game ends when all gems are picked up. The player to gather the most gems within the time limit given wins the game. If gems are not all picked up before time runs out, the player with the most hems wins.</p>
+<h3>Other Rules</h3>
+<ul>
+  <li>If a player touches an enemy they will be sent back to their start position.</li>
+  <li>If a player touches freeze, they will be frozen for the time indicated in the settings.</li>
+  <li>If a player touches slow, they will be slowed down for the time indicated in the settings.</li>
+  <li>If a player touches speed, they will speed up for the time indicated in the settings.</li>
+</ul>
+<h2>Game Settings</h2>
+
+<h3>Game Duration (seconds)</h3>
+
+<pre><code>Settings.time_limit = 10;</code></pre>
+
+<h3>Hero 1</h3>
+
+<pre><code>Settings.hero_1.skin = "assets/images/06.png";
+Settings.hero_1.speed = 300;
+</code></pre>
+
+<h3>Enemy Defaults</h3>
+<p>This sets a default speed and appearance for enemies. These settings can be overriden for each enemy placed on the map.</p>
+<pre><code>Settings.enemy.default_speed = 100;
+Settings.enemy.default_skin = "assets/images/07.png";
+</code></pre>
+
+<h3>Wall Default Skin</h3>
+<p>This sets a default appearance for wall tiles.</p>
+<pre><code>Settings.wall.default_skin = "assets/images/17.png";
+</code></pre>
+
+<h3>Gem Defaults</h3>
+<p>This sets a default points value and appearance for gems. These settings can be overriden for each gem placed on the map.</p>
+<pre><code>Settings.gem.default_points = 5;
+Settings.gem.default_skin = "assets/images/27.png";
+</code></pre>
+
+<h3>Powerup &amp; Hazard Defaults</h3>
+<p>This sets a default durations and skins for the "freeze", "speed" and "slow" items.</p>
+<pre><code>Settings.freeze.default_skin = "assets/images/20.png";
+Settings.freeze.default_duration = 3;
+Settings.speed.default_skin = "assets/images/19.png";
+Settings.speed.default_duration = 2;
+Settings.slow.default_skin = "assets/images/21.png";
+Settings.slow.default_duration = 2;
+</code></pre>
+
+<h3>Game Assets</h3>
+<p>For any of the objects above that have a "skin" setting, you can define what graphic you want to use from sprites available in the <em>assets/images</em> directory. Here are all the sprites that are available for you to use:
+  <img src="/images/assets-1.png" alt="Assets 1" style="max-width: 100%;max-height:100%;">
+  <img src="/images/assets-2.png" alt="Assets 2" style="max-width: 100%;max-height:100%;">
+</p>
+<p>If you want to use your own original sprites, you will need to host them online (on your own server) and insert the full url to the sprites. All sprites are made @2x (80 x 80) and displayed at half-size (40 x 40).</p>
+
+<h2>Placing Objects</h2>
+<p>Each tile in the grid is 40 x 40. To determine the x and y position of an object, multiply the tile x and y numbers from the paper prototype by 40.</p>
+
+<h3>Hero 1</h3>
+<p>Create a <em>hero_1</em> object and place it at x,y position.</p>
+
+<pre><code>Spawn.hero_1(0, 0);
+</code></pre>
+
+<h3>Hero 2</h3>
+<p>Create a <em>hero_2</em> object and place it at x,y position.</p>
+
+<pre><code>Spawn.hero_2(40, 40);
+</code></pre>
+
+<h3>Wall</h3>
+<ul>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a wall at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.wall(120, 120);
+</code></pre>
+  </li>
+  <li>The third argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.wall(120, 120, "assets/images/17.png");
+</code></pre>
+  </li>
+</ul>
+
+<h3>Enemy</h3>
+<ul>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn an enemy at ( x,y ) position. The third argument is a direction in quote marks. It is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). These first 3 arguments are all required.
+<pre><code>Spawn.enemy(120, 120, "down");
+</code></pre>
+  </li>
+  <li>The fourth argument is enemy speed (optional). If it is not set, the default speed will be used.
+<pre><code>Spawn.enemy(120, 120, "down", 600);
+</code></pre>
+  </li>
+  <li>The fifth argument is skin (optional). If it is not set, the default will be used.
+<pre><code>Spawn.enemy(120, 120, "down", 600, "assets/images/22.png");
+</code></pre>
+  </li>
+</ul>
+
+<h3>Gem</h3>
+<ul>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a gem at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.gem(120, 120);
+</code></pre>
+  </li>
+  <li>The third argument is a point value for the gem (optional). If a value is not set, the default value will be used
+<pre><code>Spawn.gem(120, 120, 10);
+</code></pre>
+  </li>
+  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.gem(120, 120, 10, "assets/images/28.png");
+</code></pre>
+  </li>
+</ul>
+
+<h3>Speed</h3>
+<ul>
+  <li>A "speed" powerup makes the player move faster. The player will speed up for the duration defined by the Settings default, or by the third argument in the function call.</li>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a speed item at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.speed(120, 120);
+</code></pre>
+  </li>
+  <li>The third argument is a duration for the powerup. If a value is not set, the default value will be used.
+<pre><code>Spawn.speed(120, 120, 100);
+</code></pre>
+  </li>
+  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.speed(120, 120, 10, "assets/images/34.png");
+</code></pre>
+  </li>
+</ul>
+
+<h3>Slow</h3>
+<ul>
+  <li>A "slow" hazard makes the player move slowly. The player will slow down for the duration defined by the Settings default, or by the third argument in the function call.</li>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a slow item at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.slow(120, 120);
+</code></pre>
+  </li>
+  <li>The third argument is a duration for the hazard. If a value is not set, the default value will be used.
+<pre><code>Spawn.slow(120, 120, 100);
+</code></pre>
+  </li>
+  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.slow(120, 120, 10, "assets/images/35.png");
+</code></pre>
+  </li>
+</ul>
+
+<h3>Freeze</h3>
+<ul>
+  <li>A "freeze" hazard makes the player stop completely. The player will be frozen for the duration defined by the Settings default, or by the third argument in the function call.</li>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a freeze item at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.freeze(120, 120);
+</code></pre>
+  </li>
+  <li>The third argument is a duration for the hazard. If a value is not set, the default value will be used.
+<pre><code>Spawn.freeze(120, 120, 100);
+</code></pre>
+  </li>
+  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.freeze(120, 120, 10, "assets/images/33.png");
+</code></pre>
+  </li>
+</ul>
+
+
+<!-- END DOCS -->
+
+        </div>
+        <div class="small-12 large-4 columns">
+          <h2>
+            Programming Resources
+          </h2>
+          <p class="sidebar-resources">
+            <a href="/build" class="sidebar-button"><i class="fa fa-link"></i>Programming Workflow Setup</a>
+            <a href="/SpawnHero2.zip" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Project Starter Files</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div><!--#content-->
+
+  <div class="footer-container">
+    <div class="row">
+      <div class='small-12 columns'>
+        <div class="footer">
+          <p><a href="http://stem.gomagames.com">stem.gomagames.com</a></p>
+        </div><!--.footer-->
+      </div>
+    </div><!--.row-->
+  </div><!--.footer-container-->
+
+  <script src="/scripts/jquery.js"></script>
+  <script src="/scripts/what-input.js"></script>
+  <script src="/scripts/foundation.js"></script>
+  <script src="/scripts/app.js"></script>
+</body>
+</html>
