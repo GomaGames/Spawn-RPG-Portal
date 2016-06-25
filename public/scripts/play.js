@@ -7,7 +7,8 @@
 
   var game_id = window.location.hash.split("#").pop();
 
-  var ref = new Firebase("https://spawn-hero-2.firebaseio.com/games").child(game_id);
+  firebase.initializeApp(window.FIREBASE_CONFIG);
+  var ref = firebase.database().ref("games");
 
   ref.on("value", function(snapshot) {
     var game_data = snapshot.val();

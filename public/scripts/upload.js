@@ -1,6 +1,7 @@
 (function(window) {
 
-  var ref = new Firebase("https://spawn-hero-2.firebaseio.com").child("games");
+  firebase.initializeApp(window.FIREBASE_CONFIG);
+  var ref = firebase.database().ref("games");
 
   $.fn.serializeObject = function()
   {
