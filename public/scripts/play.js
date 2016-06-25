@@ -16,7 +16,18 @@
     if(game_data == null){
       badGame();
     } else {
-      eval(game_data.code); // danger -_-
+      var args = [window.Spawn];
+      for(var i = 0; i < 42; i++){
+        args.push(null);
+      }
+      (function(Spawn,
+        window, alert, external, chrome, caches, localStorage, sessionStorage, crypto, postMessage, close,
+        applicationCache, console, screen, navigator, parent, opener, toolbar, statusbar, statusbars, personalbar,
+        menubar, locationbar, history, location, name, self, stop, open, confirm, prompt,
+        print, requestAnimationFrame, cancelAnimationFrame, moveTo, moveBy, resizeTo, resizeBy, find, scroll, scrollTo,
+        scrollBy, openDatabase  ){
+        eval(game_data.code); // sandboxed
+      }).apply({}, args );
       lime.embed ("openfl-content", 920, 680, "FFFFFF");
     }
 
