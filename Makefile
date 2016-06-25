@@ -1,4 +1,6 @@
-GAME_DIST_ZIP := ../Spawn-RPG/SpawnHeroRPG.zip
+GAME_SRC_PATH := ../Spawn-RPG
+GAME_DIST_ZIP := ${GAME_SRC_PATH}/SpawnHeroRPG.zip
+GAME_SRC_DIR := public/*
 GAME_DIST_DIR := public
 REMOTE_DIST_PATH := spawn-hero-rpg.gomagames.com/
 SITE_DIST_ZIP := upload.tar.bz2
@@ -8,6 +10,9 @@ all: updateDist pushProduction
 
 updateDist:
 	cp ${GAME_DIST_ZIP} ${GAME_DIST_DIR}
+	cp -a ${GAME_SRC_PATH}/${GAME_SRC_DIR} ${GAME_DIST_DIR}/play/
+	cp ${GAME_DIST_DIR}/play.html ${GAME_DIST_DIR}/play/index.html
+	rm ${GAME_DIST_DIR}/play/game.html ${GAME_DIST_DIR}/play/game.js
 
 pushProduction:
 	tar -C public/ -cvjf ${SITE_DIST_ZIP} .
