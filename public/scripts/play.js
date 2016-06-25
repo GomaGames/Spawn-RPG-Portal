@@ -8,7 +8,7 @@
   var game_id = window.location.hash.split("#").pop();
 
   firebase.initializeApp(window.FIREBASE_CONFIG);
-  var ref = firebase.database().ref("games");
+  var ref = firebase.database().ref("games/"+game_id);
 
   ref.on("value", function(snapshot) {
     var game_data = snapshot.val();
