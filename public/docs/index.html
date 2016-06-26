@@ -153,45 +153,45 @@ The Hero is the <em>character that the player controls</em> in the game. The her
 <code class="example">Spawn.object(200, 400, "assets/images/tree.png");
 </code>
 
-<h3 id="gems">Gems</h3>
+<h3 id="coins">Coins</h3>
 
 <div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
-<p>Gems are items that when touched, <em>instantly add points to the player's total gem count</em>. The gem graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
+<p>Coins are items that when touched, <em>instantly add points to the player's total coin count</em>. The coin graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
 
-<h4>Gem Default Skin</h4>
-<p>The <em>optional</em> code to set the default gem appearance is below. Be sure that the value is a <span class="highlight-code">string</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
+<h4>Coin Default Skin</h4>
+<p>The <em>optional</em> code to set the default coin appearance is below. Be sure that the value is a <span class="highlight-code">string</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
 
-<code>Settings.gem.default_skin = <span class="highlight-this">"graphic:String"</span>;
+<code>Settings.coin.default_skin = <span class="highlight-this">"graphic:String"</span>;
 </code>
 
 <p>Here is an example with a value:</p>
-<code class="example">Settings.gem.default_skin = "assets/images/crown.png";
+<code class="example">Settings.coin.default_skin = "assets/images/crown.png";
 </code>
 
-<h4>Gem Default Value</h4>
-<p>The <em>optional</em> code to set the default gem value is below. Be sure that the value is an <span class="highlight-code">integer</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
-<code>Settings.gem.default_points = <span class="highlight-this">points:Int</span>;
+<h4>Coin Default Value</h4>
+<p>The <em>optional</em> code to set the default coin value is below. Be sure that the value is an <span class="highlight-code">integer</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
+<code>Settings.coin.default_points = <span class="highlight-this">points:Int</span>;
 </code>
 
 <p>Here is an example with a value:</p>
-<code class="example">Settings.gem.default_points = 1;
+<code class="example">Settings.coin.default_points = 1;
 </code>
 
-<h4>Placing a Gem</h4>
-<p>The code to place a gem on the screen is below. The arguments that must be set for a gem are the x and y position. The point value and an override gem graphic are optional. A good use of a different graphic is a treasure chest (it is a hidden gem, until you touch it). Be sure that the x and y values are set to <span class="highlight-code">integers</span>, the point value is set to an <span class="highlight-code">integer</span>, and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn a gem is below:</p>
-<code>Spawn.gem(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?points:Int</span>, <span class="highlight-this">?graphic:String</span>);
+<h4>Placing a Coin</h4>
+<p>The code to place a coin on the screen is below. The arguments that must be set for a coin are the x and y position. The point value and an override coin graphic are optional. A good use of a different graphic is a treasure chest (it is a hidden coin, until you touch it). Be sure that the x and y values are set to <span class="highlight-code">integers</span>, the point value is set to an <span class="highlight-code">integer</span>, and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn a coin is below:</p>
+<code>Spawn.coin(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?points:Int</span>, <span class="highlight-this">?graphic:String</span>);
 </code>
 
 <p>Here are some examples with values:</p>
 
-<code class="example"><span class="comment">// Spawns a Gem worth 50 points that uses the crown graphic.</span>
-Spawn.gem(200, 400, 50, "assets/images/crown.png");
+<code class="example"><span class="comment">// Spawns a coin worth 50 points that uses the crown graphic.</span>
+Spawn.coin(200, 400, 50, "assets/images/crown.png");
 
-<span class="comment">// Spawns a Gem worth 10 points that uses the default graphic.</span>
-Spawn.gem(200, 400, 10);
+<span class="comment">// Spawns a coin worth 10 points that uses the default graphic.</span>
+Spawn.coin(200, 400, 10);
 
-<span class="comment">// Spawns a Gem worth the default points an uses the default graphic.</span>
-Spawn.gem(200, 400);
+<span class="comment">// Spawns a coin worth the default points an uses the default graphic.</span>
+Spawn.coin(200, 400);
 </code>
 
 <h3 id="freeze-slow-speed">Freeze, Slow, &amp; Speed</h3>
@@ -236,7 +236,7 @@ Settings.speed.default_duration = 3;
 </code>
 
 <h4>Placing a Freeze, Slow, or Speed Item</h4>
-<p>The code to place a freeze, slow, or speed item on the screen is below. The arguments that must be set for any of these items are the x and y position. The duration and an override graphic are optional. A good use of a different graphic is a trap (it looks like a treasure chest though it's really a item that has an effect on the player when touched). Be sure that the x and y values are set to <span class="highlight-code">integers</span>, the point value is set to an <span class="highlight-code">integer</span>, and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn a gem is below:</p>
+<p>The code to place a freeze, slow, or speed item on the screen is below. The arguments that must be set for any of these items are the x and y position. The duration and an override graphic are optional. A good use of a different graphic is a trap (it looks like a treasure chest though it's really a item that has an effect on the player when touched). Be sure that the x and y values are set to <span class="highlight-code">integers</span>, the point value is set to an <span class="highlight-code">integer</span>, and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn a one of these items is below:</p>
 
 <code>Spawn.freeze(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?duration:Int</span>, <span class="highlight-this">?graphic:String</span>);
 </code>
