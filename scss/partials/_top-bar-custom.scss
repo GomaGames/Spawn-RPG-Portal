@@ -49,6 +49,11 @@
         display: inline-block;
         // background-color: red;
         
+        &.active{
+          font-weight: 700;
+          color: $orange;
+        }
+
         &:hover{
           background-color: darken($dark-gray, 5%);
           color: $yellow;

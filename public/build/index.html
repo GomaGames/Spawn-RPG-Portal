@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SpawnHero 2</title>
+  <title>SpawnHero RPG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic' rel='stylesheet' type='text/css'>
@@ -15,12 +15,14 @@
         <div class="top-bar-title">
           <h2>
             <span class="title">
-              <a href="/">SpawnHero 2</a>
+              <a href="/">SpawnHero RPG</a>
             </span>
             <span class="subtitle">
               <a href="/">Games</a>
-              <a href="/build">Set Up</a>
-              <a href="/docs">Docs</a>
+              <a href="/plan">Prototype</a>
+              <a class="active" href="/build">Set Up</a>
+              <a href="/docs">Code</a>
+              <a href="/game-art">Game Art</a>
             </span>
           </h2>
         </div><!--top-bar-title-->
@@ -39,7 +41,7 @@
 
     <div class="hero-container">
       <div class="hero">
-        <h1 class="hero-title">SpawnHero 2: Workflow Setup</h1>
+        <h1 class="hero-title">SpawnHero RPG:<br>Programming Setup</h1>
         <!-- <p class="hero-paragraph">Below are the resources you will need to build a level for SpawnHero 2.</p> -->
         <!-- <a href="/upload" class="upload-button">Upload a Game</a> -->
       </div><!--.banner-->
@@ -49,23 +51,24 @@
       <div class="row">
         <div class="small-12 large-8 columns">
           <h2>
-            Paper Prototype
+            Mac OS Set Up
           </h2>
-          <ul>
-            <li>Create a paper prototype for your game level. The game grid is 23 x 16 tiles. Each block is 40px x 40px, making the screen size 920 x 640. <a href="/images/SpawnHero2-PaperPrototype.pdf" target="_blank">Download &amp; Print</a> copies of this grid for prototyping.</li>
-            <li>Here is a quick reference of the different elements that can be used in your level design. See the <a href="#">SpawnHero 2 Docs</a> for more descriptions of how each element affects game play.
-              <img src="/images/objects.png" style="max-width: 400px; width: 100%;" alt="Demo of Game Elements">
-            </li>
-            <li>If you know how to use the eyedropper tool, LivePaint, and drag to copy &amp; paste in Illustrator, you can quickly mock up a level in Illustrator. <a href="/images/Prototype-in-Illustrator.ai" target="_blank">Download the Illustrator Template</a> to create a prototype in Adobe Illustrator.</li>
-            <li>Here is a demo prototype level mocked up in Illustrator:
-              <img src="/images/paper-prototype.png" alt="Demo of Paper Prototype">
-            </li>
-          </ul>
+
+          <p>When you are done with your prototype, it is time to set up your programming work environment. The instructions below are for a Mac OS. If you have a different operating system, the setup will be slightly different.</p>
+          
           <h2>
-            Environment Setup
+            Download Tools &amp; Files
           </h2>
           <ol>
-            <li>Download the <a href="/SpawnHero2.zip" target="_blank" >Project Starter Files</a>.</li>
+            <li>Download and install <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a>.</li>
+            <li>Download and install <a href="https://www.sublimetext.com/3" target="_blank">SublimeText3</a> (the trial is free).</li>
+            <li>Download the <a href="/SpawnHeroRPG.zip" target="_blank" >Project Starter Files</a>.</li>
+          </ol>
+
+          <h2>
+            Open Project in SublimeText3
+          </h2>
+          <ol>
             <li>Double-click the zipped file to unzip it.</li>
             <li>Move the unzipped folder to your Desktop.</li>
             <li>(<strong>Mac</strong>) Drag your project folder onto the <em>SublimeText</em> icon in the dock.<br>
@@ -73,16 +76,18 @@
               <img src="/images/sublime-icon.png" alt="SublimeText in Dock" style="max-width: 150px;">
             </li>
             <li>Your entire folder should open with a sidebar that shows all the project files. If you don’t see a sidebar with files, go to <em>View > Sidebar > Show Sidebar.</em>
-              <img src="/images/sublimetext.png" alt="SublimeText">
+              <img src="/images/rpg-sublimetext.png" alt="SublimeText">
             </li>
-            <li><strong>SpawnHero2 Key Files:</strong>
+            <li><strong>SpawnHero RPG Key Files:</strong>
               <ul class="file-structure">
-                <li>/SpawnHero2 <span>This is your main project directory.</span>
+                <li>/SpawnHeroRPG <span>This is your main project directory.</span>
                   <ul>
                     <li>/assets <span>This directory holds all the graphics and sound effects.</span></li>
                     <li>/flixel <span>This directory holds all the game engine files.</span></li>
+                    <li>/lib <span>This directory holds more game engine files.</span></li>
                     <li class="highlighted">game.js <span>This is the file where create your game level.</span></li>
                     <li>index.html <span>This is the file your game loads into.</span></li>
+                    <li>SpawnHeroRPG.js <span>This is the game code (you don't have to touch this).</span></li>
                   </ul>
                 </li>
               </ul>
@@ -91,13 +96,13 @@
               <p>The files require a local server in order to run the game.</p>
               <ul>
                 <li>Search for the <em>Terminal</em> App with finder (the magnifying glass in the upper right corner of the computer). Open the App.</li>
-                <li>Drag your <em>Spawn-Hero-2</em> project folder onto the open <em>Terminal</em> window. Then hit <em>Enter</em>. This will navigate directly to the folder containing your game files.
+                <li>Drag your <em>Spawn-Hero-RPG</em> project folder onto the open <em>Terminal</em> window. Then hit <em>Enter</em>. This will navigate directly to the folder containing your game files.
                   <img src="/images/terminal.png" alt="Terminal">
                 </li>
                 <li>Type the following command into the <em>Terminal</em> window: <u>python -m SimpleHTTPServer</u>
                 </li>
                 <li>Hit <em>Enter</em>. If you did it correctly, after a few seconds, you should see something similar to this:
-                  <img src="/images/server.png" alt="Simple Server">
+                  <img src="/images/rpg-server.png" alt="Simple Server">
                 </li>
               </ul>
             </li>
@@ -112,6 +117,7 @@
           <h2>
             Programming Workflow
           </h2>
+          <p>Now you are ready to start translating your prototype into code. Remember:<br>&nbsp;</p>
           <ol>
             <li><strong>Test Code Changes Often:</strong>
               <ul>
@@ -121,8 +127,9 @@
                 <li>Switch to your Google Chrome browser that contains your game.</li>
                 <li>Refresh the page by hitting <em>Command-R</em></li>
               </ul>
+              <br>&nbsp;
             </li>
-            <li><strong>Debugging</strong>:
+            <li><strong>Use Chrome's "Inspect Element" to find bugs</strong>:
               <ul>
                 <li>In Chrome, right-click (Mac: <em>Control-Click</em>) the game page and choose <em>Inspect</em> from the dropdown.
                   <img src="/images/inspect.png" alt="Inspect">
@@ -134,24 +141,13 @@
             </li>
           </ol>
           <h2>
-            Build Your Game Level
+            Start Programming
           </h2>
-          <ol>
-            <li>All game level code is added to the <em>game.js</em> file. Translate your paper prototype to code. Here's a snaphot of some of the code used for the demo prototype:
-              <img src="http://placehold.it/600x300/00FF00/FFFFFF/" alt="Demo of Code">
-            </li>
-            <li>Refer to the <a href="/docs">SpawnHero 2 Docs</a> for the different function calls you can use in the level.
-            </li>
-            <li>Once your game level completed, play test your game.</li>
-          </ol>
-          <h2>
-            Publish Your Game
-          </h2>
-          <p>When you are done building your game level, <a href="/upload">Upload &amp; Publish</a> your game.</p>
+          <p>All game level code should be written in the <em>game.js</em> file. In SublimeText3, click on the <em>game.js</em> file in the sidebar. Refer to the docs to start coding!</p>
         </div>
         <div class="small-12 large-4 columns">
           <h3>
-            Game Programming Difficulty
+            Programming Set Up Difficulty
           </h3>
           <p class="rating">
             <span class="fa fa-star fa-2x"></span>
@@ -160,28 +156,21 @@
             <span class="fa fa-star-o fa-2x"></span>
             <span class="fa fa-star-o fa-2x"></span>
           </p>
-          <p class="small">Some technical setup. Does not require extensive knowledge of Javascript. Game level programming can be completed in 10min ~ 1hr.</p>
-          <h3>
-            Workshop Materials
-          </h3>
-          <p class="sidebar-materials">
-            <a href="https://docs.google.com/presentation/d/1PsvmjFkP0ADmh5_0gBpVfh0xdKMxl5JbP9sY67o-73A/edit?usp=sharing" target="_blank" class="sidebar-button"><i class="fa fa-desktop"></i>Workshop Slideshow</a>
-            <a href="/images/SpawnHero2-Worksheet.pdf" class="sidebar-button" target="_blank"><i class="fa fa-print"></i>Workshop Notes Worksheet</a>
-          </p>
+          <p class="small">Some technical setup.</p>
           <h3>
             Project Resources
           </h3>
-          <p class="sidebar-resources">
-            <a href="/SpawnHero2.zip" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Project Starter Files</a>
-            <a href="/docs" class="sidebar-button"><i class="fa fa-link"></i>Spawn Hero 2 Docs</a>
-            <a href="/images/SpawnHero2-PaperPrototype.pdf" target="_blank" class="sidebar-button"><i class="fa fa-print"></i>Printable Grid Template</a>
-            <a href="/images/Prototype-in-Illustrator.ai" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Illustrator Grid Template</a>
+          <p class="sidebar-materials">
+            <a href="/SpawnHeroRPG.zip" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Project Starter Files</a>
           </p>
           <h3>
-            Publish Your Game
+            Tools
           </h3>
-          <p class="sidebar-publish">
-            <a href="/upload" class="sidebar-button"><i class="fa fa-upload"></i>Upload Your Game Level</a>
+          <p class="sidebar-resources">
+            <a href="#" class="sidebar-button"><i class="fa fa-link"></i>SublimeText3</a>
+            <a href="#" class="sidebar-button"><i class="fa fa-link"></i>Google Chrome</a>
+            <!-- <a href="/images/SpawnHeroRPG-PaperPrototype.pdf" target="_blank" class="sidebar-button"><i class="fa fa-print"></i>Printable Grid Template</a> -->
+            <!-- <a href="/images/RPG-Prototype-in-Illustrator.ai" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Illustrator Grid Template</a> -->
           </p>
         </div>
       </div>
