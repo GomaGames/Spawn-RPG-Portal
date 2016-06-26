@@ -12,7 +12,7 @@ updateDist:
 	cp ${GAME_DIST_ZIP} ${GAME_DIST_DIR}
 	cp -a ${GAME_SRC_PATH}/${GAME_SRC_DIR} ${GAME_DIST_DIR}/play/
 	cp ${GAME_DIST_DIR}/play.html ${GAME_DIST_DIR}/play/index.html
-	rm ${GAME_DIST_DIR}/play/game.html ${GAME_DIST_DIR}/play/game.js
+	rm ${GAME_DIST_DIR}/play/game.js
 
 pushProduction:
 	tar -C public/ -cvjf ${SITE_DIST_ZIP} .
