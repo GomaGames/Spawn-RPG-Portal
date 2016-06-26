@@ -58,27 +58,38 @@
 
 <p>All game code will all be contained within the <em>game.js</em> file.</p>
 
-<h3>Game Intro</h3>
+<h3>Game Intro Text</h3>
 <p>Write an intro to your game. The intro must be a <span class="highlight-code">string</span>. If you want to insert a line break, you need to add <em>\n\n</em> to represent a new line.</p>
 
-<code>Spawn.intro = <span class="highlight-this">"intro:String"</span>;
+<code>Spawn.introText = <span class="highlight-this">"intro:String"</span>;
 </code>
 
 <p>Here is an example of an intro:</p>
 
-<code class="example">Spawn.intro = "Welcome to the Kingdom of Oo.\n\nHelp Finn complete his quests.";
+<code class="example">Spawn.introText = "Welcome to the Kingdom of Oo.\n\nHelp Finn complete his quests.";
 </code>
 
-<!-- <h3>Win Game Text</h3>
+<h3>Game Win Text</h3>
 <p>At the end of a successful game, a message will appear. The game text must be a <span class="highlight-code">string</span>. If you want to insert a line break, you need to add <em>\n\n</em> to represent a new line.</p>
 
-<code>Spawn.win = <span class="highlight-this">"intro:String"</span>;
+<code>Spawn.gameWinText = <span class="highlight-this">"intro:String"</span>;
 </code>
 
 <p>Here is an example of win text:</p>
 
-<code class="example">Spawn.win = "Congratulations!\n\nYou defeated all the enemies\n\nand saved all the Princesses!";
-</code> -->
+<code class="example">Spawn.gameWinText = "Congratulations!\n\nYou defeated all the enemies\n\nand saved all the Princesses!";
+</code>
+
+<h3>Game Over Text</h3>
+<p>At the end of a unsuccessful game, a message will appear. The game text must be a <span class="highlight-code">string</span>. If you want to insert a line break, you need to add <em>\n\n</em> to represent a new line.</p>
+
+<code>Spawn.gameOverText = <span class="highlight-this">"intro:String"</span>;
+</code>
+
+<p>Here is an example of game over text:</p>
+
+<code class="example">Spawn.gameOverText = "You didn't quite save all the princesses! Try Again!";
+</code>
 
 <h2 id="game-elements">Game Elements</h2>
 
@@ -240,16 +251,16 @@ Settings.speed.default_duration = 3;
 Spawn.freeze(200, 400);
 
 <span class="comment">// Spawns a Slow item that lasts for a duration of 12 and uses the default graphic.</span>
-Spawn.gem(200, 400, 12);
+Spawn.slow(200, 400, 12);
 
 <span class="comment">// Spawns a Speed item that lasts for a duration of 5 and uses the wand graphic.</span>
-Spawn.gem(200, 400, 5, "assets/images/wand.png");
+Spawn.speed(200, 400, 5, "assets/images/wand.png");
 </code>
 
 <h3 id="enemies">Enemies</h3>
 
 <div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
-<p>Enemies are items that when touched, <em>deduct health from the player??? kill???</em>. A player can fend off an enemy by attacking [Spacebar]. The enemy graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
+<p>An enemy <em>deducts life when it touches the Hero.</em>The hero can fend off an enemy by attacking with [Spacebar]. The enemy graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
 
 <h4>Enemy Default Skin</h4>
 <p>The <em>optional</em> code to set the default enemy appearance is below. Be sure that the value is a <span class="highlight-code">string</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
@@ -271,7 +282,7 @@ Spawn.gem(200, 400, 5, "assets/images/wand.png");
 </code>
 
 <h4>Placing an Enemy</h4>
-<p>The first 2 arguments x and y are <span class="highlight-code">integers</span> that spawn an enemy at ( x,y ) position. <em>The first 3 arguments are required.</em></p>
+<p>The first 2 arguments x and y are <span class="highlight-code">integers</span> that spawn an enemy at ( x,y ) position. <em>The first 2 arguments are required.</em></p>
 
 <p>The third argument is a <span class="highlight-code">string</span> that is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will initially start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). If no direction is set, the enemy will not move until something hits it.</p>
 
@@ -377,7 +388,7 @@ Spawn.object(8*tile, 0*tile, wall);
 Spawn.object(9*tile, 0*tile, wall);
 
 </code>
-<p>You could also use a <em>for loop to make it even less redundant</em>:</p>
+<p>You could also use a <em>for loop</em> to make it even less redundant:</p>
 <code class="example">// Set a variable for the tile size.
 var tile_size = 40;
 
