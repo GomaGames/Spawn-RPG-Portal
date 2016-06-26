@@ -17,7 +17,7 @@
       badGame();
     } else {
       var args = [window.Spawn];
-      for(var i = 0; i < 42; i++){
+      for(var i = 0; i < 50; i++){
         args.push(null);
       }
       (function(Spawn,
@@ -25,7 +25,7 @@
         applicationCache, console, screen, navigator, parent, opener, toolbar, statusbar, statusbars, personalbar,
         menubar, locationbar, history, location, name, self, stop, open, confirm, prompt,
         print, requestAnimationFrame, cancelAnimationFrame, moveTo, moveBy, resizeTo, resizeBy, find, scroll, scrollTo,
-        scrollBy, openDatabase  ){
+        scrollBy, openDatabase, XMLHttpRequest, document, Document, Window, Navigator, Worker, WebSocket, WebSockets  ){
         eval(game_data.code); // sandboxed
       }).apply({}, args );
       lime.embed ("openfl-content", 920, 680, "FFFFFF");
