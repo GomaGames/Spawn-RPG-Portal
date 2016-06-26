@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SpawnHero 2</title>
+  <title>SpawnHero RPG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic' rel='stylesheet' type='text/css'>
@@ -15,12 +15,14 @@
         <div class="top-bar-title">
           <h2>
             <span class="title">
-              <a href="/">SpawnHero 2</a>
+              <a href="/">SpawnHero RPG</a>
             </span>
             <span class="subtitle">
               <a href="/">Games</a>
+              <a href="/plan">Prototype</a>
               <a href="/build">Set Up</a>
-              <a href="/docs">Docs</a>
+              <a class="active" href="/docs">Code</a>
+              <a href="/game-art">Game Art</a>
             </span>
           </h2>
         </div><!--top-bar-title-->
@@ -39,7 +41,7 @@
 
     <div class="hero-container">
       <div class="hero">
-        <h1 class="hero-title">SpawnHero 2: Documentation</h1>
+        <h1 class="hero-title">SpawnHero RPG:<br>Programming Documentation</h1>
         <!-- <p class="hero-paragraph">Below are the resources you will need to build a level for SpawnHero 2.</p> -->
         <!-- <a href="/upload" class="upload-button">Upload a Game</a> -->
       </div><!--.banner-->
@@ -48,192 +50,424 @@
     <div class="standard-container">
       <div class="row">
         <div class="small-12 large-8 columns">
-          <h2>
-            SpawnHero 2
-          </h2>
 
-          <p>The only file that needs to be edited is the <strong style="">game.js</strong> file. The game.js file is initially blank. All you need to do is start adding code!</p>
+<h2 id="programming-101">Programming 101</h2>
+<p>Value, String, Integer, Boolean, Variable, Set, And, Or</p>
 
-          <!-- DOCS -->
+<h2 id="intro">Game Intro &amp; Ending</h2>
 
-<h2>Game Rules</h2>
-<p>At minimum, the game requires <em>hero_1</em>, <em>hero_2</em>, and at least 1 <em>gem</em> in order for the game to be winnable.</p>
-<h3>The Win Condition</h3>
-<p>The game ends when all gems are picked up. The player to gather the most gems within the time limit given wins the game. If gems are not all picked up before time runs out, the player with the most hems wins.</p>
-<h3>Other Rules</h3>
-<ul>
-  <li>If a player touches an enemy they will be sent back to their start position.</li>
-  <li>If a player touches freeze, they will be frozen for the time indicated in the settings.</li>
-  <li>If a player touches slow, they will be slowed down for the time indicated in the settings.</li>
-  <li>If a player touches speed, they will speed up for the time indicated in the settings.</li>
-</ul>
-<h2>Game Settings</h2>
+<p>All game code will all be contained within the <em>game.js</em> file.</p>
 
-<h3>Game Duration (seconds)</h3>
+<h3>Game Intro</h3>
+<p>Write an intro to your game. The intro must be a <span class="highlight-code">string</span>. If you want to insert a line break, you need to add <em>\n\n</em> to represent a new line.</p>
 
-<pre><code>Settings.time_limit = 10;</code></pre>
+<code>Spawn.intro = <span class="highlight-this">"intro:String"</span>;
+</code>
 
-<h3>Hero 1</h3>
+<p>Here is an example of an intro:</p>
 
-<pre><code>Settings.hero_1.skin = "assets/images/06.png";
-Settings.hero_1.speed = 300;
-</code></pre>
+<code class="example">Spawn.intro = "Welcome to the Kingdom of Oo.\n\nHelp Finn complete his quests.";
+</code>
 
-<h3>Enemy Defaults</h3>
-<p>This sets a default speed and appearance for enemies. These settings can be overriden for each enemy placed on the map.</p>
-<pre><code>Settings.enemy.default_speed = 100;
-Settings.enemy.default_skin = "assets/images/07.png";
-</code></pre>
+<!-- <h3>Win Game Text</h3>
+<p>At the end of a successful game, a message will appear. The game text must be a <span class="highlight-code">string</span>. If you want to insert a line break, you need to add <em>\n\n</em> to represent a new line.</p>
 
-<h3>Wall Default Skin</h3>
-<p>This sets a default appearance for wall tiles.</p>
-<pre><code>Settings.wall.default_skin = "assets/images/17.png";
-</code></pre>
+<code>Spawn.win = <span class="highlight-this">"intro:String"</span>;
+</code>
 
-<h3>Gem Defaults</h3>
-<p>This sets a default points value and appearance for gems. These settings can be overriden for each gem placed on the map.</p>
-<pre><code>Settings.gem.default_points = 5;
-Settings.gem.default_skin = "assets/images/27.png";
-</code></pre>
+<p>Here is an example of win text:</p>
 
-<h3>Powerup &amp; Hazard Defaults</h3>
-<p>This sets a default durations and skins for the "freeze", "speed" and "slow" items.</p>
-<pre><code>Settings.freeze.default_skin = "assets/images/20.png";
-Settings.freeze.default_duration = 3;
-Settings.speed.default_skin = "assets/images/19.png";
-Settings.speed.default_duration = 2;
-Settings.slow.default_skin = "assets/images/21.png";
-Settings.slow.default_duration = 2;
-</code></pre>
+<code class="example">Spawn.win = "Congratulations!\n\nYou defeated all the enemies\n\nand saved all the Princesses!";
+</code> -->
 
-<h3>Game Assets</h3>
-<p>For any of the objects above that have a "skin" setting, you can define what graphic you want to use from sprites available in the <em>assets/images</em> directory. Here are all the sprites that are available for you to use:
-  <img src="/images/assets-1.png" alt="Assets 1" style="max-width: 100%;max-height:100%;">
-  <img src="/images/assets-2.png" alt="Assets 2" style="max-width: 100%;max-height:100%;">
-</p>
-<p>If you want to use your own original sprites, you will need to host them online (on your own server) and insert the full url to the sprites. All sprites are made @2x (80 x 80) and displayed at half-size (40 x 40).</p>
+<h2 id="game-elements">Game Elements</h2>
 
-<h2>Placing Objects</h2>
-<p>Each tile in the grid is 40 x 40. To determine the x and y position of an object, multiply the tile x and y numbers from the paper prototype by 40.</p>
+<h3>Game Level</h3>
+<p>You can place many different types of things in SpawnHero RPG. The entire level map will be written inside the <em>Spawn.game</em> function. Don't misplace the closing <em>}</em> at the very end!</p>
 
-<h3>Hero 1</h3>
-<p>Create a <em>hero_1</em> object and place it at x,y position.</p>
+<code>Spawn.game = function(){
+  <span class="comment">// Your game code goes here.</span>
 
-<pre><code>Spawn.hero_1(0, 0);
-</code></pre>
 
-<h3>Hero 2</h3>
-<p>Create a <em>hero_2</em> object and place it at x,y position.</p>
+}</code>
 
-<pre><code>Spawn.hero_2(40, 40);
-</code></pre>
+<!-- <p class="tip"><b>Tip!</b> Indent your code when it is "inside" something.</p> -->
 
-<h3>Wall</h3>
-<ul>
-  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a wall at ( x,y ) position. These first 2 arguments are required.
-<pre><code>Spawn.wall(120, 120);
-</code></pre>
-  </li>
-  <li>The third argument is skin (optional). If it is not set, the default skin will be used.
-<pre><code>Spawn.wall(120, 120, "assets/images/17.png");
-</code></pre>
-  </li>
-</ul>
+<h3 id="hero">Hero</h3>
 
-<h3>Enemy</h3>
-<ul>
-  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn an enemy at ( x,y ) position. The third argument is a direction in quote marks. It is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). These first 3 arguments are all required.
-<pre><code>Spawn.enemy(120, 120, "down");
-</code></pre>
-  </li>
-  <li>The fourth argument is enemy speed (optional). If it is not set, the default speed will be used.
-<pre><code>Spawn.enemy(120, 120, "down", 600);
-</code></pre>
-  </li>
-  <li>The fifth argument is skin (optional). If it is not set, the default will be used.
-<pre><code>Spawn.enemy(120, 120, "down", 600, "assets/images/22.png");
-</code></pre>
-  </li>
-</ul>
+<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<p>
+The Hero is the <em>character that the player controls</em> in the game. The hero graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
 
-<h3>Gem</h3>
-<ul>
-  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a gem at ( x,y ) position. These first 2 arguments are required.
-<pre><code>Spawn.gem(120, 120);
-</code></pre>
-  </li>
-  <li>The third argument is a point value for the gem (optional). If a value is not set, the default value will be used
-<pre><code>Spawn.gem(120, 120, 10);
-</code></pre>
-  </li>
-  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
-<pre><code>Spawn.gem(120, 120, 10, "assets/images/28.png");
-</code></pre>
-  </li>
-</ul>
+<h4>Hero Skin</h4>
+<p>The <em>optional</em> code to set the hero's appearance is below. Be sure that the hero skin value is a <span class="highlight-code">string</span>.</p>
+<code>Settings.hero.skin = <span class="highlight-this">"graphic:String"</span>;
+</code>
 
-<h3>Speed</h3>
-<ul>
-  <li>A "speed" powerup makes the player move faster. The player will speed up for the duration defined by the Settings default, or by the third argument in the function call.</li>
-  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a speed item at ( x,y ) position. These first 2 arguments are required.
-<pre><code>Spawn.speed(120, 120);
-</code></pre>
-  </li>
-  <li>The third argument is a duration for the powerup. If a value is not set, the default value will be used.
-<pre><code>Spawn.speed(120, 120, 100);
-</code></pre>
-  </li>
-  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
-<pre><code>Spawn.speed(120, 120, 10, "assets/images/34.png");
-</code></pre>
-  </li>
-</ul>
+<p>Here is an example with a value:</p>
+<code class="example">Settings.hero.skin = "assets/images/girl-hero.png";
+</code>
 
-<h3>Slow</h3>
-<ul>
-  <li>A "slow" hazard makes the player move slowly. The player will slow down for the duration defined by the Settings default, or by the third argument in the function call.</li>
-  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a slow item at ( x,y ) position. These first 2 arguments are required.
-<pre><code>Spawn.slow(120, 120);
-</code></pre>
-  </li>
-  <li>The third argument is a duration for the hazard. If a value is not set, the default value will be used.
-<pre><code>Spawn.slow(120, 120, 100);
-</code></pre>
-  </li>
-  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
-<pre><code>Spawn.slow(120, 120, 10, "assets/images/35.png");
-</code></pre>
-  </li>
-</ul>
+<h4>Hero Speed</h4>
+<p>The <em>optional</em> code to set the hero's walking speed is below. The value will be in the hundreds range. Be sure that the hero skin value is an <span class="highlight-code">integer</span>.</p>
+<code>Settings.hero.speed = <span class="highlight-this">speed:Int</span>;
+</code>
 
-<h3>Freeze</h3>
-<ul>
-  <li>A "freeze" hazard makes the player stop completely. The player will be frozen for the duration defined by the Settings default, or by the third argument in the function call.</li>
-  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a freeze item at ( x,y ) position. These first 2 arguments are required.
-<pre><code>Spawn.freeze(120, 120);
-</code></pre>
-  </li>
-  <li>The third argument is a duration for the hazard. If a value is not set, the default value will be used.
-<pre><code>Spawn.freeze(120, 120, 100);
-</code></pre>
-  </li>
-  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
-<pre><code>Spawn.freeze(120, 120, 10, "assets/images/33.png");
-</code></pre>
-  </li>
-</ul>
+<p>Here is an example with a value:</p>
+<code class="example">Settings.hero.speed = 300;
+</code>
 
+<h4>Placing the Hero</h4>
+<p>The <em>required</em> code to set the hero's start position is below. You need to spawn <span class="restrictions">1 hero</span> in the game for it to be playable. Be sure that the hero's x and y position are <span class="highlight-code">integers</span>.</p>
+
+<code>Spawn.hero(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>);
+</code>
+
+<p>Here is an example with values:</p>
+<code class="example">Spawn.hero(80, 120);
+</code>
+
+
+<h3 id="objects">Objects</h3>
+
+<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<p>Objects are <em>impassable barriers</em> in the game, such as Walls, Trees, Bushes, or Stumps. See the Game Art page to choose any art asset to set for your object. The arguments that must be set for an object are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an object is below:</p>
+
+<h4>Placing an Object</h4>
+<code>Spawn.object(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">graphic:String</span>);
+</code>
+
+<p>Here is an example with values:</p>
+
+<code class="example">Spawn.object(200, 400, "assets/images/tree.png");
+</code>
+
+<h3 id="gems">Gems</h3>
+
+<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<p>Gems are items that when touched, <em>instantly add points to the player's total gem count</em>. The gem graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
+
+<h4>Gem Default Skin</h4>
+<p>The <em>optional</em> code to set the default gem appearance is below. Be sure that the value is a <span class="highlight-code">string</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
+
+<code>Settings.gem.default_skin = <span class="highlight-this">"graphic:String"</span>;
+</code>
+
+<p>Here is an example with a value:</p>
+<code class="example">Settings.gem.default_skin = "assets/images/crown.png";
+</code>
+
+<h4>Gem Default Value</h4>
+<p>The <em>optional</em> code to set the default gem value is below. Be sure that the value is an <span class="highlight-code">integer</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
+<code>Settings.gem.default_points = <span class="highlight-this">points:Int</span>;
+</code>
+
+<p>Here is an example with a value:</p>
+<code class="example">Settings.gem.default_points = 1;
+</code>
+
+<h4>Placing a Gem</h4>
+<p>The code to place a gem on the screen is below. The arguments that must be set for a gem are the x and y position. The point value and an override gem graphic are optional. A good use of a different graphic is a treasure chest (it is a hidden gem, until you touch it). Be sure that the x and y values are set to <span class="highlight-code">integers</span>, the point value is set to an <span class="highlight-code">integer</span>, and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn a gem is below:</p>
+<code>Spawn.gem(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?points:Int</span>, <span class="highlight-this">?graphic:String</span>);
+</code>
+
+<p>Here are some examples with values:</p>
+
+<code class="example"><span class="comment">// Spawns a Gem worth 50 points that uses the crown graphic.</span>
+Spawn.gem(200, 400, 50, "assets/images/crown.png");
+
+<span class="comment">// Spawns a Gem worth 10 points that uses the default graphic.</span>
+Spawn.gem(200, 400, 10);
+
+<span class="comment">// Spawns a Gem worth the default points an uses the default graphic.</span>
+Spawn.gem(200, 400);
+</code>
+
+<h3 id="freeze-slow-speed">Freeze, Slow, &amp; Speed</h3>
+
+<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<p>When touched Spawn.freeze <em>instantly freezes the player</em>. The default graphic looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
+<br>
+<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<p>When touched Spawn.slow <em>instantly slows the player</em>. The default graphic looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
+<br>
+<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<p>When touched Spawn.speed <em>instantly speeds up the player</em>. The default graphic looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use. Unlike Freeze and Slow, Speed is usually provides positive effects to the player.</p>
+
+<h4>Freeze, Slow, &amp; Speed Default Skins</h4>
+<p>The <em>optional</em> code to set the default appearance for these items is below. Be sure that the value for any of these items is a <span class="highlight-code">string</span>. This is a default setting, so they typically only need to be defined once when the game loads.</p>
+<code>Settings.freeze.default_skin = <span class="highlight-this">"graphic:String"</span>;
+</code>
+<code>Settings.slow.default_skin = <span class="highlight-this">"graphic:String"</span>;
+</code>
+<code>Settings.speed.default_skin = <span class="highlight-this">"graphic:String"</span>;
+</code>
+
+<p>Here are examples with values:</p>
+<code class="example">Settings.speed.default_skin = "assets/images/lightning.png";
+Settings.slow.default_skin = "assets/images/turtle.png";
+Settings.freeze.default_skin = "assets/images/ice.png";
+</code>
+
+<h4>Freeze, Slow, &amp; Speed Default Durations</h4>
+<p>The <em>optional</em> code to set the default duration of these items is below. Be sure that the value for any of these items is an <span class="highlight-code">integer</span>. These are default setting, so they typically only need to be defined once when the game loads.</p>
+<code>Settings.freeze.default_duration = <span class="highlight-this">points:Int</span>;
+</code>
+<code>Settings.slow.default_duration = <span class="highlight-this">points:Int</span>;
+</code>
+<code>Settings.speed.default_duration = <span class="highlight-this">points:Int</span>;
+</code>
+
+<p>Here are examples with a values:</p>
+<code class="example">Settings.freeze.default_duration = 3;
+Settings.slow.default_duration = 3;
+Settings.speed.default_duration = 3;
+</code>
+
+<h4>Placing a Freeze, Slow, or Speed Item</h4>
+<p>The code to place a freeze, slow, or speed item on the screen is below. The arguments that must be set for any of these items are the x and y position. The duration and an override graphic are optional. A good use of a different graphic is a trap (it looks like a treasure chest though it's really a item that has an effect on the player when touched). Be sure that the x and y values are set to <span class="highlight-code">integers</span>, the point value is set to an <span class="highlight-code">integer</span>, and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn a gem is below:</p>
+
+<code>Spawn.freeze(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?duration:Int</span>, <span class="highlight-this">?graphic:String</span>);
+</code>
+<code>Spawn.slow(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?duration:Int</span>, <span class="highlight-this">?graphic:String</span>);
+</code>
+<code>Spawn.speed(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?duration:Int</span>, <span class="highlight-this">?graphic:String</span>);
+</code>
+
+<p>Here are some examples with values:</p>
+
+<code class="example"><span class="comment">// Spawns a Freeze item that uses the default duration and graphic</span>
+Spawn.freeze(200, 400);
+
+<span class="comment">// Spawns a Slow item that lasts for a duration of 12 and uses the default graphic.</span>
+Spawn.gem(200, 400, 12);
+
+<span class="comment">// Spawns a Speed item that lasts for a duration of 5 and uses the wand graphic.</span>
+Spawn.gem(200, 400, 5, "assets/images/wand.png");
+</code>
+
+<h3 id="enemies">Enemies</h3>
+
+<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<p>Enemies are items that when touched, <em>deduct health from the player??? kill???</em>. A player can fend off an enemy by attacking [Spacebar]. The enemy graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
+
+<h4>Enemy Default Skin</h4>
+<p>The <em>optional</em> code to set the default enemy appearance is below. Be sure that the value is a <span class="highlight-code">string</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
+
+<code>Settings.enemy.default_skin = <span class="highlight-this">"graphic:String"</span>;
+</code>
+
+<p>Here is an example with a value:</p>
+<code class="example">Settings.enemy.default_skin = "assets/images/ghost.png";
+</code>
+
+<h4>Enemy Default Speed</h4>
+<p>The <em>optional</em> code to set the default enemy speed is below. Be sure that the value is an <span class="highlight-code">integer</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
+<code>Settings.enemy.default_speed = <span class="highlight-this">points:Int</span>;
+</code>
+
+<p>Here is an example with a value:</p>
+<code class="example">Settings.enemy.default_speed = 100;
+</code>
+
+<h4>Placing an Enemy</h4>
+<p>The first 2 arguments x and y are <span class="highlight-code">integers</span> that spawn an enemy at ( x,y ) position. <em>The first 3 arguments are required.</em></p>
+
+<p>The third argument is a <span class="highlight-code">string</span> that is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will initially start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). If no direction is set, the enemy will not move until something hits it.</p>
+
+<p>The fourth argument is an <span class="highlight-code">integer</span> that sets the enemy speed (optional). If it is not set, the default speed will be used.</p>
+
+<p>The fifth argument is a <span class="highlight-code">string</span> that sets the enemy graphic (optional). If it is not set, the default graphic will be used.</p>
+
+<p>The notated code to spawn an enemy is below:</p>
+
+<code>Spawn.enemy(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?direction:String</span>, <span class="highlight-this">?speed:Int</span>, <span class="highlight-this">?graphic:String</span>);
+</code>
+
+<p>Here are some examples of enemies with values:</p>
+
+<code class="example"><span class="comment">// Spawns an enemy with the robot skin, that does not move.
+// The direction is set though doesn't do anything.</span>
+Spawn.enemy(200, 400, "left", 0, "assets/images/robot.png");
+
+<span class="comment">// Spawns an enemy that moves right at 800 speed.</span>
+Spawn.enemy(200, 400, "right", 800);
+
+<span class="comment">// Spawns an enemy that moves "up"
+// at the default speed with the default graphic.</span>
+Spawn.enemy(200, 400, "up");
+</code>
+
+<h3 id="collectable-sprites">Collectable Sprites</h3>
+
+<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<p>Collectable Sprites are things that <em>can be "picked up"</em> in the game and added to your inventory, such as Weapons, Packages, Scrolls, Potions, and Keys. Collectable sprites can be walked over so they do not block the player's path. See the Game Art page to choose any art asset to set for your collectable sprite. The arguments that must be set for a collectable sprite are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an collectable sprite is below:</p>
+
+<code>Spawn.collectableSprite(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">graphic:String</span>);
+</code>
+
+<p>Here is an example with values:</p>
+
+<code class="example">Spawn.collectableSprite(200, 400, "assets/images/scroll.png");
+</code>
+
+
+<h3 id="interactable-sprites">Interactable Sprites</h3>
+
+<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<p>Interactable Sprites are <em>impassable barriers that can be "talked to"</em> in the game by pressing [Enter], such as Shop Owners, Villagers, or Sign Posts. See the Game Art page to choose any art asset to set for your interactable sprite. The arguments that must be set for an interactable sprite are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an interactable sprite is below:</p>
+
+<code>Spawn.interactableSprite(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">graphic:String</span>);
+</code>
+
+<p>Here is an example with values:</p>
+
+<code class="example">Spawn.interactableSprite(200, 400, "assets/images/sign.png");
+</code>
+
+<p>An interactable sprite on it's own isn't very useful until we define what happens when the player interacts with the item. We will get to that when we go over some useful <em>functions</em>.</p>
+
+<h3 id="messages">Messages</h3>
+<p><img src="http://placehold.it/300x50/CCCCCC/FFFFFF" alt="">A message is a <em>text popup</em> that displays in the middle of the screen. A message can display when an interactable item is touched, or when some other condition is set. The message must be written as a <span class="highlight-code">string</span>. The notated code to spawn a message is below:</p>
+
+<code>Spawn.message(<span class="highlight-this">message:String</span>);
+</code>
+
+<p>A message on it's own isn't very useful until it is combined with conditions for when it is triggered. We will get to that when we go over some useful <em>functions</em>.</p>
+
+<h2 id="interact">Making Things Happen</h2>
+
+<h3>Placing Objects Easily</h3>
+
+<h4>Placing a Bunch of Walls</h4>
+<p>Placing a bunch of walls can be very redundant:</p>
+<code class="example">
+// Place some walls on the game map.
+Spawn.object(0, 0, "assets/images/brick.png");
+Spawn.object(40, 0, "assets/images/brick.png");
+Spawn.object(80, 0, "assets/images/brick.png");
+Spawn.object(120, 0, "assets/images/brick.png");
+Spawn.object(160, 0, "assets/images/brick.png");
+Spawn.object(200, 0, "assets/images/brick.png");
+Spawn.object(240, 0, "assets/images/brick.png");
+Spawn.object(280, 0, "assets/images/brick.png");
+Spawn.object(320, 0, "assets/images/brick.png");
+Spawn.object(360, 0, "assets/images/brick.png");
+
+</code>
+
+<p>Set a variable representing the grid cell size to make it easier to place objects on the map. Also set a variable for the image that you are using. This way, you can focus on placing items at grid points, instead of pixel positions.</p>
+
+<code class="example">// Set a variable for the tile size.
+var tile_size = 40;
+
+// Set a variable to use for all walls.
+var wall = "assets/images/brick.png";
+
+// Place some walls on the game map.
+Spawn.object(0*tile, 0*tile, wall);
+Spawn.object(1*tile, 0*tile, wall);
+Spawn.object(2*tile, 0*tile, wall);
+Spawn.object(3*tile, 0*tile, wall);
+Spawn.object(4*tile, 0*tile, wall);
+Spawn.object(5*tile, 0*tile, wall);
+Spawn.object(6*tile, 0*tile, wall);
+Spawn.object(7*tile, 0*tile, wall);
+Spawn.object(8*tile, 0*tile, wall);
+Spawn.object(9*tile, 0*tile, wall);
+
+</code>
+<p>You could also use a <em>for loop to make it even less redundant</em>:</p>
+<code class="example">// Set a variable for the tile size.
+var tile_size = 40;
+
+// Set a variable to use for all walls.
+var wall = "assets/images/brick.png";
+
+// Place some walls on the game map with a for loop.
+for (i = 0; i < 10; i++){
+  Spawn.object([i]*tile_size, 0*tile_size, wall);
+}
+
+</code>
+
+<h2>LEFT OFF HERE:
+- 'player'
+- 'player life'
+</2>
+
+<h4>Player Lives</h4>
+<p>By default, the hero has 3 lives. Lives are decremented when an enemy bumps into the hero. You can change the <em>optional</em> setting by setting a <span class="highlight-code">integer</span> for the number of lives the player should have.</p>
+
+<code>player.life = <span class="highlight-this">"life:Int"</span>;
+</code>
+
+<p>Here is an example with a value:</p>
+<code class="example">player.life = 5;
+</code>
+
+<h4>Interaction with a Message</h4>
+<p>In order for an interactable sprite to do something, you will need the <em>interact</em> function.</p>
+
+<p>First, define a new variable and set its value to an interactable sprite. In this example, the variable is called <em>messageFlag</em>.</p>
+
+<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/object-flag-orange.png");
+</code>
+
+<p>Next, use the <em>interact</em> function to create a new code block where we can set what happens when the item is interacted with:</p>
+
+<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/object-flag-orange.png");
+messageFlag.interact = function(){
+  <span class="comment">// Something will happen when the player interacts with "messageFlag".</span>
+
+} 
+</code>
+
+<p>What can you define in here? Maybe...</p>
+
+<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/object-flag-orange.png");
+messageFlag.interact = function(){
+  Spawn.message('Finish 2 quests to win the game.');
+} 
+</code>
 
 <!-- END DOCS -->
 
         </div>
         <div class="small-12 large-4 columns">
-          <h2>
-            Programming Resources
-          </h2>
+          <h3>
+            Programming Difficulty
+          </h3>
+          <p class="rating">
+            <span class="fa fa-star fa-2x"></span>
+            <span class="fa fa-star fa-2x"></span>
+            <span class="fa fa-star fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+          </p>
+          <p class="small">Requires some knowledge of Javascript. Game level programming can be easy if code blocks are copied and pasted from documentation. Programming is more challenging if complex logic is desired for intricate timing.</p>
+          <h3>
+            Documentation
+          </h3>
+          <p class="sidebar-materials">
+            <a href="#programming-101" class="sidebar-button"><i class="fa fa-book"></i>Programming 101</a>
+            <a href="#intro" class="sidebar-button"><i class="fa fa-book"></i>Game Intro &amp; Ending</a>
+            <a href="#game-elements" class="sidebar-button"><i class="fa fa-book"></i>Game Elements</a>
+            <a href="#interaction" class="sidebar-button"><i class="fa fa-book"></i>Making Things Happen</a>
+          </p>
+          <!-- <h3>
+            Project Resources
+          </h3>
           <p class="sidebar-resources">
-            <a href="/build" class="sidebar-button"><i class="fa fa-link"></i>Programming Workflow Setup</a>
-            <a href="/SpawnHero2.zip" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Project Starter Files</a>
+            <a href="/SpawnHeroRPG.zip" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Project Starter Files</a>
+            <a href="/images/SpawnHeroRPG-PaperPrototype.pdf" target="_blank" class="sidebar-button"><i class="fa fa-print"></i>Printable Grid Template</a>
+            <a href="/images/RPG-Prototype-in-Illustrator.ai" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Illustrator Grid Template</a>
+          </p> -->
+          <h3>
+            Publish Your Game
+          </h3>
+          <p class="sidebar-publish">
+            <a href="/upload" class="sidebar-button"><i class="fa fa-upload"></i>Upload Your Game Level</a>
           </p>
         </div>
       </div>

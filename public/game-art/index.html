@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SpawnHero RPG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/styles/app.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <div class="top-bar-title">
+          <h2>
+            <span class="title">
+              <a href="/">SpawnHero RPG</a>
+            </span>
+            <span class="subtitle">
+              <a href="/">Games</a>
+              <a href="/plan">Prototype</a>
+              <a href="/build">Set Up</a>
+              <a href="/docs">Code</a>
+              <a class="active" href="/game-art">Game Art</a>
+            </span>
+          </h2>
+        </div><!--top-bar-title-->
+      </div>
+    </div><!--top-bar-->
+  </header>
+
+  <div class='content'>
+
+    <!--<div class="banner-container">
+      <div class="banner">
+        <div class="banner-image" style="background-image:url('http://placehold.it/1300x500/')">
+        </div>
+      </div>
+    </div>-->
+
+    <div class="hero-container">
+      <div class="hero">
+        <h1 class="hero-title">SpawnHero RPG:<br>Game Art</h1>
+        <!-- <p class="hero-paragraph">Below are the resources you will need to build a level for SpawnHero 2.</p> -->
+        <!-- <a href="/upload" class="upload-button">Upload a Game</a> -->
+      </div><!--.banner-->
+    </div><!--.banner-container-->
+
+    <div class="standard-container">
+      <div class="row">
+        <div class="small-12 large-8 columns">
+          <h2>
+            SpawnHero RPG Game Art
+          </h2>
+
+          <p>For any of the objects above that have a "skin" setting, you can define what graphic you want to use from sprites available in the <em>assets/images</em> directory. Here are all the sprites that are available for you to use:
+            <img src="/images/assets-1.png" alt="Assets 1" style="max-width: 100%;max-height:100%;">
+            <img src="/images/assets-2.png" alt="Assets 2" style="max-width: 100%;max-height:100%;">
+          </p>
+
+          <h3>Custom Art</h3>
+          <p>If you want to use original artwork, all you need to do is drop your files into the <em>/assets/images/</em> directory. Images must be 80 x 80 transparent pngs.</p>
+          
+          <h3>Custom Art Online</h3>
+          <p>If you upload a game that uses custom art, the artwork will not automatically be uploaded. You will need to host your artwork online on your own server and then insert the full url to the sprites in your code before you upload. Pointing to an absolute url for a hosted asset will look something like this:</p>
+
+<code>Settings.hero.skin = <span class="highlight-this">http://yourdomain.com/spawn-hero-rpg-hero.png"</span>;
+</code>
+        </div>
+        <div class="small-12 large-4 columns">
+          <h3>Dunno</h3>
+          <p class="small">dunno</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!--#content-->
+
+  <div class="footer-container">
+    <div class="row">
+      <div class='small-12 columns'>
+        <div class="footer">
+          <p><a href="http://stem.gomagames.com">stem.gomagames.com</a></p>
+        </div><!--.footer-->
+      </div>
+    </div><!--.row-->
+  </div><!--.footer-container-->
+
+  <script src="/scripts/jquery.js"></script>
+  <script src="/scripts/what-input.js"></script>
+  <script src="/scripts/foundation.js"></script>
+  <script src="/scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SpawnHero RPG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/styles/app.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <div class="top-bar-title">
+          <h2>
+            <span class="title">
+              <a href="/">SpawnHero RPG</a>
+            </span>
+            <span class="subtitle">
+              <a href="/">Games</a>
+              <a class="active" href="/plan">Prototype</a>
+              <a href="/build">Set Up</a>
+              <a href="/docs">Code</a>
+              <a href="/game-art">Game Art</a>
+            </span>
+          </h2>
+        </div><!--top-bar-title-->
+      </div>
+    </div><!--top-bar-->
+  </header>
+
+  <div class='content'>
+
+    <!--<div class="banner-container">
+      <div class="banner">
+        <div class="banner-image" style="background-image:url('http://placehold.it/1300x500/')">
+        </div>
+      </div>
+    </div>-->
+
+    <div class="hero-container">
+      <div class="hero">
+        <h1 class="hero-title">SpawnHero RPG:<br>Planning &amp; Prototyping</h1>
+        <!-- <p class="hero-paragraph">Below are the resources you will need to build a level for SpawnHero 2.</p> -->
+        <!-- <a href="/upload" class="upload-button">Upload a Game</a> -->
+      </div><!--.banner-->
+    </div><!--.banner-container-->
+
+    <div class="standard-container">
+      <div class="row">
+        <div class="small-12 large-8 columns">
+          <h2>
+            SpawnHero RPG
+          </h2>
+          
+          <p>What you can do in this game, and what an RPG is.</p>
+          
+          <h3>How do you win or lose?</h3>
+<p>The game ends when some sort of win condition is met. It's up to you to determine what the win condition is. Some examples are:</p>
+<ul>
+  <li>The player wins the game when all coins on the map are collected.</li>
+  <li>The player wins when all quests are completed.</li>
+  <li>The player wins when all treasure is found.</li>
+  <li>The player wins when all enemies have been defeated.</li>
+  <li>The player wins when all enemies have been evaded.</li>
+  <li>The player wins when a riddle is solved.</li>
+</ul>
+<br>
+
+<h3>Types of Objects</h3>
+<p>When planning your game map, it is also important to know what types of objects can be placed on the screen. Note that just because an object is called 'enemy', it does not have to look like an enemy or behave like an enemy. There are many creative ways to use these objects to make them look &amp; behave in creative ways.</p>
+<ul>
+  <li>hero: properties</li>
+  <li>enemy: properties / If a player touches an <em>enemy</em>, the game is over.</li>
+  <li>object: properties</li>
+  <li>collectable: properties</li>
+  <li>interactable: properties</li>
+  <li>freeze: If a player touches <em>freeze</em>, they will be frozen for the time indicated in the settings.</li>
+  <li>slow: If a player touches <em>slow</em>, they will be slowed down for the time indicated in the settings.</li>
+  <li>speed: If a player touches <em>speed</em>, they will speed up for the time indicated in the settings.</li>
+</ul>
+<br>
+
+<p>It is critical to review the <a href="/docs">SpawnHero RPG Docs</a> for descriptions of how each element affects game play, and to learn the rules and constraints of the system. This will allow you to design a level that is actually possible to build with the tools that are available.</p>
+
+
+          <h2>
+            SpawnHero RPG Prototype
+          </h2>
+          
+          <p>Before you start programming, it is important to create a prototype for your game level. Your prototype is a map for building the game, so you can focus on making the game challenging and fun, without worrying about the code.</p>
+
+          <p>This game has a map size of 46 by 34 tiles. Each block is 40px by 40px, making the total map size 1840px by 1360px.</p>
+
+          <h3>Prototype on Paper</h3>
+          <p><a href="/images/SpawnHeroRPG-PaperPrototype.pdf" target="_blank">Download &amp; Print</a> copies of the level grip for prototyping.</p>
+
+          <p>Below are shorthand symbols that represent different game elements. The final artwork used for each element may look different from the shorthand symbols.
+            <img src="/images/rpg-game-objects.png" style="max-width: 400px; width: 100%;" alt="Demo of Game Elements">
+          </p>
+
+          <p>Here is a demo prototype level mocked up in Illustrator:
+            <img src="/images/rpg-paper-prototype.png" alt="Demo of Paper Prototype">
+          </p>
+
+          <h3>Prototype in Adobe Illustrator</h3>
+          <p>If you know how to use the eyedropper tool, LivePaint, and drag to copy &amp; paste in Illustrator, you can quickly mock up a level in Illustrator. <a href="/images/RPG-Prototype-in-Illustrator.ai" target="_blank">Download the Illustrator Template</a> to create a prototype in Adobe Illustrator.</p>
+          
+          <p>Here is a demo prototype level mocked up in Illustrator:
+            <img src="/images/rpg-illustrator-prototype.png" alt="Demo of Paper Prototype">
+          </p>
+        </div>
+        <div class="small-12 large-4 columns">
+          <h3>
+            Prototyping Difficulty
+          </h3>
+          <p class="rating">
+            <span class="fa fa-star fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+          </p>
+          <p class="small">Very easy to plan a level. (Could be difficult to build the level if it is designed to be very complex).</p>
+          <h3>
+            Project Resources
+          </h3>
+          <p class="sidebar-materials">
+            <a href="/images/SpawnHeroRPG-PaperPrototype.pdf" target="_blank" class="sidebar-button"><i class="fa fa-print"></i>Printable Grid Template</a>
+            <a href="/images/RPG-Prototype-in-Illustrator.ai" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Illustrator Grid Template</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div><!--#content-->
+
+  <div class="footer-container">
+    <div class="row">
+      <div class='small-12 columns'>
+        <div class="footer">
+          <p><a href="http://stem.gomagames.com">stem.gomagames.com</a></p>
+        </div><!--.footer-->
+      </div>
+    </div><!--.row-->
+  </div><!--.footer-container-->
+
+  <script src="/scripts/jquery.js"></script>
+  <script src="/scripts/what-input.js"></script>
+  <script src="/scripts/foundation.js"></script>
+  <script src="/scripts/app.js"></script>
+</body>
+</html>
