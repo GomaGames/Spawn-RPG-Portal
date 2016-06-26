@@ -106,7 +106,7 @@
 
 <h3 id="hero">Hero</h3>
 
-<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/person-female-4.png')"></div>
 <p>
 The Hero is the <em>character that the player controls</em> in the game. The hero graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
 
@@ -141,7 +141,7 @@ The Hero is the <em>character that the player controls</em> in the game. The her
 
 <h3 id="objects">Objects</h3>
 
-<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/wall-stone.png')"></div>
 <p>Objects are <em>impassable barriers</em> in the game, such as Walls, Trees, Bushes, or Stumps. See the Game Art page to choose any art asset to set for your object. The arguments that must be set for an object are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an object is below:</p>
 
 <h4>Placing an Object</h4>
@@ -155,7 +155,7 @@ The Hero is the <em>character that the player controls</em> in the game. The her
 
 <h3 id="coins">Coins</h3>
 
-<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/item-coin-yellow.png')"></div>
 <p>Coins are items that when touched, <em>instantly add points to the player's total coin count</em>. The coin graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
 
 <h4>Coin Default Skin</h4>
@@ -196,13 +196,13 @@ Spawn.coin(200, 400);
 
 <h3 id="freeze-slow-speed">Freeze, Slow, &amp; Speed</h3>
 
-<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/item-ice-blue.png')"></div>
 <p>When touched Spawn.freeze <em>instantly freezes the player</em>. The default graphic looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
 <br>
-<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/creature-turtle.png')"></div>
 <p>When touched Spawn.slow <em>instantly slows the player</em>. The default graphic looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
 <br>
-<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/nature-lightning.png')"></div>
 <p>When touched Spawn.speed <em>instantly speeds up the player</em>. The default graphic looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use. Unlike Freeze and Slow, Speed is usually provides positive effects to the player.</p>
 
 <h4>Freeze, Slow, &amp; Speed Default Skins</h4>
@@ -259,7 +259,7 @@ Spawn.speed(200, 400, 5, "assets/images/wand.png");
 
 <h3 id="enemies">Enemies</h3>
 
-<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/creature-robot-grey.png')"></div>
 <p>An enemy <em>deducts life when it touches the Hero.</em>The hero can fend off an enemy by attacking with [Spacebar]. The enemy graphic default looks like this, however, you can set it to look like any asset in the assets directory. See the Game Art page for all the assets you can use.</p>
 
 <h4>Enemy Default Skin</h4>
@@ -311,7 +311,7 @@ Spawn.enemy(200, 400, "up");
 
 <h3 id="collectable-sprites">Collectable Sprites</h3>
 
-<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/item-sword-yellow.png')"></div>
 <p>Collectable Sprites are things that <em>can be "picked up"</em> in the game and added to your inventory, such as Weapons, Packages, Scrolls, Potions, and Keys. Collectable sprites can be walked over so they do not block the player's path. See the Game Art page to choose any art asset to set for your collectable sprite. The arguments that must be set for a collectable sprite are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an collectable sprite is below:</p>
 
 <code>Spawn.collectableSprite(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">graphic:String</span>);
@@ -325,7 +325,7 @@ Spawn.enemy(200, 400, "up");
 
 <h3 id="interactable-sprites">Interactable Sprites</h3>
 
-<div class="icon-left" style="background-image:url('http://placehold.it/120x120/AAAAAA/FFFFFF/')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/item-sign-brown.png')"></div>
 <p>Interactable Sprites are <em>impassable barriers that can be "talked to"</em> in the game by pressing [Enter], such as Shop Owners, Villagers, or Sign Posts. See the Game Art page to choose any art asset to set for your interactable sprite. The arguments that must be set for an interactable sprite are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an interactable sprite is below:</p>
 
 <code>Spawn.interactableSprite(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">graphic:String</span>);
@@ -339,7 +339,7 @@ Spawn.enemy(200, 400, "up");
 <p>An interactable sprite on it's own isn't very useful until we define what happens when the player interacts with the item. We will get to that when we go over some useful <em>functions</em>.</p>
 
 <h3 id="messages">Messages</h3>
-<p><img src="http://placehold.it/300x50/CCCCCC/FFFFFF" alt="">A message is a <em>text popup</em> that displays in the middle of the screen. A message can display when an interactable item is touched, or when some other condition is set. The message must be written as a <span class="highlight-code">string</span>. The notated code to spawn a message is below:</p>
+<p>A message is a <em>text popup</em> that displays in the middle of the screen. A message can display when an interactable item is touched, or when some other condition is set. The message must be written as a <span class="highlight-code">string</span>. The notated code to spawn a message is below:</p>
 
 <code>Spawn.message(<span class="highlight-this">message:String</span>);
 </code>

@@ -54,33 +54,42 @@
             SpawnHero RPG
           </h2>
           
-          <p>What you can do in this game, and what an RPG is.</p>
+          <p>SpawnHero RPG is a tiny game framework for building a simple role playing game. With this framework, you can design a simple game level with a player, quests, enemies, coins, and items.</p>
           
-          <h3>How do you win or lose?</h3>
-<p>The game ends when some sort of win condition is met. It's up to you to determine what the win condition is. Some examples are:</p>
-<ul>
-  <li>The player wins the game when all coins on the map are collected.</li>
-  <li>The player wins when all quests are completed.</li>
-  <li>The player wins when all treasure is found.</li>
-  <li>The player wins when all enemies have been defeated.</li>
-  <li>The player wins when all enemies have been evaded.</li>
-  <li>The player wins when a riddle is solved.</li>
-</ul>
-<br>
+          <h3>How do you win?</h3>
+          <p>The game ends when the win condition is met. It is entirely up to the game developer to determine what the win condition is. Some examples of possible win conditions are:</p>
+          <ul>
+            <li>When all coins on the map are collected.</li>
+            <li>When all quests are completed.</li>
+            <li>When all treasure is found.</li>
+            <li>When all enemies have been defeated.</li>
+            <li>When all enemies have been evaded.</li>
+            <li>When a riddle is solved.</li>
+          </ul>
+          <br>
 
-<h3>Types of Objects</h3>
-<p>When planning your game map, it is also important to know what types of objects can be placed on the screen. Note that just because an object is called 'enemy', it does not have to look like an enemy or behave like an enemy. There are many creative ways to use these objects to make them look &amp; behave in creative ways.</p>
-<ul>
-  <li>hero: properties</li>
-  <li>enemy: properties / If a player touches an <em>enemy</em>, the game is over.</li>
-  <li>object: properties</li>
-  <li>collectable: properties</li>
-  <li>interactable: properties</li>
-  <li>freeze: If a player touches <em>freeze</em>, they will be frozen for the time indicated in the settings.</li>
-  <li>slow: If a player touches <em>slow</em>, they will be slowed down for the time indicated in the settings.</li>
-  <li>speed: If a player touches <em>speed</em>, they will speed up for the time indicated in the settings.</li>
-</ul>
-<br>
+          <h3>Types of Items</h3>
+          <p>When planning your game map, it is also important to know what types of items can be placed on the map. Note that just because an items is called 'enemy', it does not have to look like an enemy or behave like an enemy. There are many creative ways to use these items to make them look &amp; behave in creative ways.</p>
+
+          <p><em>Hero</em>: Main character of the game that can interact with interactable objects, attack enemies, and pick up collectable items.</p>
+
+          <p><em>Enemy</em>: Antagonist characters that walk back and forth along a set path. If an enemy touches the Hero, the Hero's Life will be decremented by 1. If the Hero attacks the enemy with [Spacebar], the enemy will be destroyed.</p>
+
+          <p><em>Coin</em>: A coin is automatically picked up when the hero touches it. A coin can be worth any number of points.</p>
+
+          <p><em>Collectable</em>: A collectable is picked up when the hero touches it and presses [Enter]. A collectable is added to the hero's inventory until it is delivered to it's target.</p>
+
+          <p><em>Object</em>: An object is an unmovable</p>
+
+          <p><em></em></p>
+          <ul>
+            <li>object: properties</li>
+            <li>interactable: properties</li>
+            <li>freeze: If a player touches <em>freeze</em>, they will be frozen for the time indicated in the settings.</li>
+            <li>slow: If a player touches <em>slow</em>, they will be slowed down for the time indicated in the settings.</li>
+            <li>speed: If a player touches <em>speed</em>, they will speed up for the time indicated in the settings.</li>
+          </ul>
+          <br>
 
 <p>It is critical to review the <a href="/docs">SpawnHero RPG Docs</a> for descriptions of how each element affects game play, and to learn the rules and constraints of the system. This will allow you to design a level that is actually possible to build with the tools that are available.</p>
 
