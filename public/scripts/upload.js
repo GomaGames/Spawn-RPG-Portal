@@ -1,7 +1,8 @@
 (function(window) {
 
   firebase.initializeApp(window.FIREBASE_CONFIG);
-  var ref = firebase.database().ref("games");
+  var group = (window.location.hash === "")? "la-pietra-summer-2016" : window.location.hash.substring(1);
+  var ref = firebase.database().ref("games/"+group);
 
   $.fn.serializeObject = function()
   {
@@ -24,7 +25,7 @@
     event.preventDefault();
     var payload = $( this ).serializeObject();
     ref.push(payload, function(){
-      window.location = "/";
+      window.location = "/#"+group;
     });
   });
 
