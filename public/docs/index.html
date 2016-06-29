@@ -112,20 +112,20 @@ The Hero is the <em>character that the player controls</em> in the game. The her
 
 <h4>Hero Skin</h4>
 <p>The <em>optional</em> code to set the hero's appearance is below. Be sure that the hero skin value is a <span class="highlight-code">string</span>.</p>
-<code>Settings.hero.skin = <span class="highlight-this">"graphic:String"</span>;
+<code>Settings.hero.default_skin = <span class="highlight-this">"graphic:String"</span>;
 </code>
 
 <p>Here is an example with a value:</p>
-<code class="example">Settings.hero.skin = "assets/images/girl-hero.png";
+<code class="example">Settings.hero.default_skin = "assets/images/girl-hero.png";
 </code>
 
 <h4>Hero Speed</h4>
 <p>The <em>optional</em> code to set the hero's walking speed is below. The value will be in the hundreds range. Be sure that the hero skin value is an <span class="highlight-code">integer</span>.</p>
-<code>Settings.hero.speed = <span class="highlight-this">speed:Int</span>;
+<code>Settings.hero.default_speed = <span class="highlight-this">speed:Int</span>;
 </code>
 
 <p>Here is an example with a value:</p>
-<code class="example">Settings.hero.speed = 300;
+<code class="example">Settings.hero.default_speed = 300;
 </code>
 
 <h4>Placing the Hero</h4>
@@ -284,29 +284,42 @@ Spawn.speed(200, 400, 5, "assets/images/wand.png");
 <h4>Placing an Enemy</h4>
 <p>The first 2 arguments x and y are <span class="highlight-code">integers</span> that spawn an enemy at ( x,y ) position. <em>The first 2 arguments are required.</em></p>
 
-<p>The third argument is a <span class="highlight-code">string</span> that is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will initially start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). If no direction is set, the enemy will not move until something hits it.</p>
+<p>The third argument is a <span class="highlight-code">string</span> that sets the enemy graphic (optional). If it is not set, the default graphic will be used.</p>
 
-<p>The fourth argument is an <span class="highlight-code">integer</span> that sets the enemy speed (optional). If it is not set, the default speed will be used.</p>
+<p>The fourth argument is a <span class="highlight-code">string</span> that is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will initially start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). If no direction is set, the enemy will not move until something hits it.</p>
 
-<p>The fifth argument is a <span class="highlight-code">string</span> that sets the enemy graphic (optional). If it is not set, the default graphic will be used.</p>
+<p>The fifth argument is an <span class="highlight-code">integer</span> that sets the enemy speed (optional). If it is not set, the default speed will be used.</p>
+
 
 <p>The notated code to spawn an enemy is below:</p>
 
-<code>Spawn.enemy(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?direction:String</span>, <span class="highlight-this">?speed:Int</span>, <span class="highlight-this">?graphic:String</span>);
+<code>Spawn.enemy(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?graphic:String</span>, <span class="highlight-this">?direction:String</span>, <span class="highlight-this">?speed:Int</span>);
 </code>
 
 <p>Here are some examples of enemies with values:</p>
 
 <code class="example"><span class="comment">// Spawns an enemy with the robot skin, that does not move.
 // The direction is set though doesn't do anything.</span>
-Spawn.enemy(200, 400, "left", 0, "assets/images/robot.png");
-
-<span class="comment">// Spawns an enemy that moves right at 800 speed.</span>
-Spawn.enemy(200, 400, "right", 800);
+Spawn.enemy(200, 400, "assets/images/robot.png");
 
 <span class="comment">// Spawns an enemy that moves "up"
-// at the default speed with the default graphic.</span>
-Spawn.enemy(200, 400, "up");
+// at the default speed.</span>
+Spawn.enemy(200, 400, "assets/images/robot.png", "up");
+
+<span class="comment">// Spawns an enemy that moves right at 800 speed.</span>
+Spawn.enemy(200, 400, "assets/images/robot.png", "right", 800);
+
+</code>
+
+<h4>Enemy Methods</h4>
+
+<code><span class="comment">// methods, need docs for these</span>
+
+<span class="comment">// die()</span>
+die()
+
+<span class="comment">// despawn()</span>
+despawn()
 </code>
 
 <h3 id="collectable-sprites">Collectable Sprites</h3>
@@ -322,6 +335,22 @@ Spawn.enemy(200, 400, "up");
 <code class="example">Spawn.collectableSprite(200, 400, "assets/images/scroll.png");
 </code>
 
+<h4>Collectable Methods</h4>
+
+<code><span class="comment">// methods, need docs for these</span>
+
+<span class="comment">// despawn()</span>
+despawn()
+
+<span class="comment">// onCollect()</span>
+onCollect() = function(){
+  if(player.coins >= 10){
+    <span class="comment">// this happens...</span>
+  }else{
+    <span class="comment">// otherwise this default happens...</span>
+  }
+}
+</code>
 
 <h3 id="interactable-sprites">Interactable Sprites</h3>
 
@@ -337,6 +366,31 @@ Spawn.enemy(200, 400, "up");
 </code>
 
 <p>An interactable sprite on it's own isn't very useful until we define what happens when the player interacts with the item. We will get to that when we go over some useful <em>functions</em>.</p>
+
+<h4>Interactable Methods</h4>
+
+<code><span class="comment">// methods, need docs for these</span>
+
+<span class="comment">// how to interact with an interactable
+// if we have an interactable Person named townMayor</span>
+
+townMayor.interact = function(){
+  // define what happens when we ineract with the townMayor
+}
+
+<span class="comment">// talk("string")</span>
+talk("string")
+
+<span class="comment">// receiveItem(), item has to be in inventory</span>
+receiveItem(itemVariableName)
+
+<span class="comment">// hasItem(), checks if interactable has item</span>
+hasItem(itemVariableName)
+
+<span class="comment">// despawn()</span>
+despawn()
+
+</code>
 
 <h3 id="messages">Messages</h3>
 <p>A message is a <em>text popup</em> that displays in the middle of the screen. A message can display when an interactable item is touched, or when some other condition is set. The message must be written as a <span class="highlight-code">string</span>. The notated code to spawn a message is below:</p>
