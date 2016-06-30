@@ -54,7 +54,7 @@
             SpawnHero RPG
           </h2>
           
-          <p>SpawnHero RPG is a tiny game framework for building a simple role playing game. With this framework, you can design a simple game level with a player, quests, enemies, coins, and items.</p>
+          <p>SpawnHero RPG is a tiny game framework for building a simple role playing game. With this framework, you can design a simple game level with a player, quests, enemies, coins, equippable items, and weapons.</p>
           
           <h3>How do you win?</h3>
           <p>The game ends when the win condition is met. It is entirely up to the game developer to determine what the win condition is. Some examples of possible win conditions are:</p>
@@ -73,22 +73,21 @@
 
           <p><em>Hero</em>: Main character of the game that can interact with interactable objects, attack enemies, and pick up collectable items.</p>
 
-          <p><em>Enemy</em>: Antagonist characters that walk back and forth along a set path. If an enemy touches the Hero, the Hero's Life will be decremented by 1. If the Hero attacks the enemy with [Spacebar], the enemy will be destroyed.</p>
+          <p><em>Enemy</em>: Antagonist characters that walk back and forth along a set path. If an enemy touches the Hero, the Hero's Life will be decremented by 1. If the Hero attacks the enemy with <em>[Spacebar]</em>, the enemy will be destroyed.</p>
 
           <p><em>Coin</em>: A coin is automatically picked up when the hero touches it. A coin can be worth any number of points.</p>
 
-          <p><em>Collectable</em>: A collectable is picked up when the hero touches it and presses [Enter]. A collectable is added to the hero's inventory until it is delivered to it's target.</p>
+          <p><em>Collectable</em>: A collectable is picked up when the hero touches it and presses <em>[Enter]</em>. A collectable is added to the hero's inventory until it is delivered to it's target.</p>
 
-          <p><em>Object</em>: An object is an unmovable</p>
+          <p><em>Weapon</em>: A weapon is picked up when the hero touches it and presses <em>[Enter]</em>. The weapon is added to the hero's inventory and is immediately equipped.</p>
 
-          <p><em></em></p>
-          <ul>
-            <li>object: properties</li>
-            <li>interactable: properties</li>
-            <li>freeze: If a player touches <em>freeze</em>, they will be frozen for the time indicated in the settings.</li>
-            <li>slow: If a player touches <em>slow</em>, they will be slowed down for the time indicated in the settings.</li>
-            <li>speed: If a player touches <em>speed</em>, they will speed up for the time indicated in the settings.</li>
-          </ul>
+          <p><em>Ranged Weapon</em>: A ranged weapon is a weapon that shoots a projectile when the hero touches it and presses <em>[Enter]</em>. The weapon is added to the hero's inventory and is immediately equipped.</p>
+
+          <p><em>Interactable</em>: An interactable is activated up when the hero touches it and presses <em>[Enter]</em>. An interactable has many properties that can change if the developer adds in additional code.</p>
+
+          <p><em>Object</em>: An object is an unmovable, unless the developer adds additional code to make it move out of the way.</p>
+
+          <p><em>Powerups</em>: Powerups can freeze, slow, or speed up a player when touched.</p>
           <br>
 
 <p>It is critical to review the <a href="/docs">SpawnHero RPG Docs</a> for descriptions of how each element affects game play, and to learn the rules and constraints of the system. This will allow you to design a level that is actually possible to build with the tools that are available.</p>
@@ -97,28 +96,18 @@
           <h2>
             SpawnHero RPG Prototype
           </h2>
-          
-          <p>Before you start programming, it is important to create a prototype for your game level. Your prototype is a map for building the game, so you can focus on making the game challenging and fun, without worrying about the code.</p>
 
-          <p>This game has a map size of 46 by 34 tiles. Each block is 40px by 40px, making the total map size 1840px by 1360px.</p>
+          <p>You don't need to do a prototype if you are starting from a demo level. However, if you are designing a brand new level, you should start with a prototype.</p>
+          
+          <p>A prototype is a map for building the game, so you can focus on making the game challenging and fun, without worrying about the code.</p>
+
+          <p>The game default map size is 46 by 34 tiles. Each block is 40px by 40px, making the total map size 1840px by 1360px (really really big!). It's best to actually start with a very small map area (typically 15 x 10 tiles or so), just to get a feel for the game engine.</p>
 
           <h3>Prototype on Paper</h3>
-          <p><a href="/images/SpawnHeroRPG-PaperPrototype.pdf" target="_blank">Download &amp; Print</a> copies of the level grip for prototyping.</p>
-
-          <p>Below are shorthand symbols that represent different game elements. The final artwork used for each element may look different from the shorthand symbols.
-            <img src="/images/rpg-game-objects.png" style="max-width: 400px; width: 100%;" alt="Demo of Game Elements">
-          </p>
-
-          <p>Here is a demo prototype level mocked up in Illustrator:
-            <img src="/images/rpg-paper-prototype.png" alt="Demo of Paper Prototype">
-          </p>
+          <p>Using grid paper, sketch the level you want to build.</p>
 
           <h3>Prototype in Adobe Illustrator</h3>
-          <p>If you know how to use the eyedropper tool, LivePaint, and drag to copy &amp; paste in Illustrator, you can quickly mock up a level in Illustrator. <a href="/images/RPG-Prototype-in-Illustrator.ai" target="_blank">Download the Illustrator Template</a> to create a prototype in Adobe Illustrator.</p>
-          
-          <p>Here is a demo prototype level mocked up in Illustrator:
-            <img src="/images/rpg-illustrator-prototype.png" alt="Demo of Paper Prototype">
-          </p>
+          <p>If you know how to use the eyedropper tool, LivePaint, and drag to copy &amp; paste in Illustrator, you can quickly mock up a level in Illustrator. Download <a href="/images/prototypes/SpawnHero-RPG-GRID1.ai" target="_blank">Illustrator Map 1</a>, <a href="/images/prototypes/SpawnHero-RPG-GRID2.ai" target="_blank">Illustrator Map 2</a>, or <a href="/images/prototypes/SpawnHero-RPG-GRID3.ai" target="_blank">Illustrator Map 3</a> to create a prototype in Adobe Illustrator. Note that the demos provided are very big maps. It is better to start with a very small room, instead of the full map shown in the Illustrator template.</p>
         </div>
         <div class="small-12 large-4 columns">
           <h3>
@@ -136,8 +125,9 @@
             Project Resources
           </h3>
           <p class="sidebar-materials">
-            <a href="/images/SpawnHeroRPG-PaperPrototype.pdf" target="_blank" class="sidebar-button"><i class="fa fa-print"></i>Printable Grid Template</a>
-            <a href="/images/RPG-Prototype-in-Illustrator.ai" target="_blank" class="sidebar-button"><i class="fa fa-cloud-download"></i>Illustrator Grid Template</a>
+            <a href="/images/prototypes/SpawnHero-RPG-GRID1.ai" class="sidebar-button" target="_blank"><i class="fa fa-cloud-download"></i>Illustrator Map 1</a>
+            <a href="/images/prototypes/SpawnHero-RPG-GRID2.ai" class="sidebar-button" target="_blank"><i class="fa fa-cloud-download"></i>Illustrator Map 2</a>
+            <a href="/images/prototypes/SpawnHero-RPG-GRID3.ai" class="sidebar-button" target="_blank"><i class="fa fa-cloud-download"></i>Illustrator Map 3</a>
           </p>
         </div>
       </div>
