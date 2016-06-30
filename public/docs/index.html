@@ -375,7 +375,7 @@ onCollect() = function(){
 // if we have an interactable Person named townMayor</span>
 
 townMayor.interact = function(){
-  // define what happens when we ineract with the townMayor
+  // define what happens when we interact with the townMayor
 }
 
 <span class="comment">// talk("string")</span>
@@ -405,19 +405,21 @@ despawn()
 <h3>Placing Objects Easily</h3>
 
 <h4>Placing a Bunch of Walls</h4>
-<p>Placing a bunch of walls can be very redundant:</p>
+<p>Placing a bunch of walls can be very redundant especially if only a single thing in each of them is being changed:</p>
 <code class="example">
-// Place some walls on the game map.
-Spawn.object(0, 0, "assets/images/brick.png");
-Spawn.object(40, 0, "assets/images/brick.png");
-Spawn.object(80, 0, "assets/images/brick.png");
-Spawn.object(120, 0, "assets/images/brick.png");
-Spawn.object(160, 0, "assets/images/brick.png");
-Spawn.object(200, 0, "assets/images/brick.png");
-Spawn.object(240, 0, "assets/images/brick.png");
-Spawn.object(280, 0, "assets/images/brick.png");
-Spawn.object(320, 0, "assets/images/brick.png");
-Spawn.object(360, 0, "assets/images/brick.png");
+// Placing some walls in a line on the game map.
+// Notice only the "x" has changed.
+
+Spawn.object(0, 0, "assets/images/wall-stone.png");
+Spawn.object(40, 0, "assets/images/wall-stone.png");
+Spawn.object(80, 0, "assets/images/wall-stone.png");
+Spawn.object(120, 0, "assets/images/wall-stone.png");
+Spawn.object(160, 0, "assets/images/wall-stone.png");
+Spawn.object(200, 0, "assets/images/wall-stone.png");
+Spawn.object(240, 0, "assets/images/wall-stone.png");
+Spawn.object(280, 0, "assets/images/wall-stone.png");
+Spawn.object(320, 0, "assets/images/wall-stone.png");
+Spawn.object(360, 0, "assets/images/wall-stone.png");
 
 </code>
 
@@ -426,40 +428,44 @@ Spawn.object(360, 0, "assets/images/brick.png");
 <code class="example">// Set a variable for the tile size.
 var tile_size = 40;
 
-// Set a variable to use for all walls.
-var wall = "assets/images/brick.png";
+// Set a variable we will use for all walls.
+var wall = "assets/images/wall-stone.png";
 
 // Place some walls on the game map.
-Spawn.object(0*tile, 0*tile, wall);
-Spawn.object(1*tile, 0*tile, wall);
-Spawn.object(2*tile, 0*tile, wall);
-Spawn.object(3*tile, 0*tile, wall);
-Spawn.object(4*tile, 0*tile, wall);
-Spawn.object(5*tile, 0*tile, wall);
-Spawn.object(6*tile, 0*tile, wall);
-Spawn.object(7*tile, 0*tile, wall);
-Spawn.object(8*tile, 0*tile, wall);
-Spawn.object(9*tile, 0*tile, wall);
+Spawn.object(0*tile, 0, wall);
+Spawn.object(1*tile, 0, wall);
+Spawn.object(2*tile, 0, wall);
+Spawn.object(3*tile, 0, wall);
+Spawn.object(4*tile, 0, wall);
+Spawn.object(5*tile, 0, wall);
+Spawn.object(6*tile, 0, wall);
+Spawn.object(7*tile, 0, wall);
+Spawn.object(8*tile, 0, wall);
+Spawn.object(9*tile, 0, wall);
 
 </code>
-<p>You could also use a <em>for loop</em> to make it even less redundant:</p>
+<p>Great! Now you have reduced the need for having to type the whole file name of the image every time by using a shorter variable name to remember it by. Now you can make it even less redundant by using a <em>for loop</em> to make it even less redundant:</p>
 <code class="example">// Set a variable for the tile size.
 var tile_size = 40;
 
 // Set a variable to use for all walls.
-var wall = "assets/images/brick.png";
+var wall = "assets/images/wall-stone.png";
 
 // Place some walls on the game map with a for loop.
+// Note: This loop starts counting at 0 until 9. 10 total.
+// 1. Starts a variable at 0.
+// 2. If 'i' is less than 10.
+// 3. Do whatever is in the loop body.
+// 4. Add +1 to it.
+// 5. Repeat until 'i' is not less than 10.
+
 for (i = 0; i < 10; i++){
-  Spawn.object([i]*tile_size, 0*tile_size, wall);
+  Spawn.object( i * tile_size, 0, wall);
 }
 
 </code>
 
-<h2>LEFT OFF HERE:
-- 'player'
-- 'player life'
-</2>
+<p>The new code we have shortened to does exactly the same thing as the original code we started off with.  Let the code do the work for you.</p>
 
 <h4>Player Lives</h4>
 <p>By default, the hero has 3 lives. Lives are decremented when an enemy bumps into the hero. You can change the <em>optional</em> setting by setting a <span class="highlight-code">integer</span> for the number of lives the player should have.</p>
@@ -470,18 +476,18 @@ for (i = 0; i < 10; i++){
 <p>Here is an example with a value:</p>
 <code class="example">player.life = 5;
 </code>
-
+<p>Knowing this value can be useful as a check in conditional (if/else) statements.</p>
 <h4>Interaction with a Message</h4>
 <p>In order for an interactable sprite to do something, you will need the <em>interact</em> function.</p>
 
 <p>First, define a new variable and set its value to an interactable sprite. In this example, the variable is called <em>messageFlag</em>.</p>
 
-<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/object-flag-orange.png");
+<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/item-flag-red.png");
 </code>
 
 <p>Next, use the <em>interact</em> function to create a new code block where we can set what happens when the item is interacted with:</p>
 
-<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/object-flag-orange.png");
+<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/item-flag-red.png");
 messageFlag.interact = function(){
   <span class="comment">// Something will happen when the player interacts with "messageFlag".</span>
 
@@ -490,12 +496,124 @@ messageFlag.interact = function(){
 
 <p>What can you define in here? Maybe...</p>
 
-<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/object-flag-orange.png");
+<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/item-flag-red.png");
 messageFlag.interact = function(){
   Spawn.message('Finish 2 quests to win the game.');
 } 
 </code>
 
+<p>This will display the message pop up with a short message.  We can use this to simulate things like talking characters when you interact with them. Let's make this a bit fancier and add a message depending on your current health.</p>
+
+<code class="example">var messageFlag = Spawn.interactableSprite( 100, 50, "assets/images/item-flag-red.png");
+messageFlag.interact = function(){
+  // A new conditional statement is added!
+  if( player.life < 5 ){
+    Spawn.message('Are you sure you are ok?');
+  }
+  Spawn.message('Finish 3 quests to win the game.');
+} 
+</code>
+<p>This adds an extra message if your health goes below 5 then continues to display the original message.  If your health is 5 and above, only the normal message will display.</p>
+
+<h4>Tracking Progress</h4>
+<p>In order for things to happen in a certain way, we need a way to track things or let the code know something now can be done.  We can do this in a lot of different ways, but one of the simplest ways are <em>booleans</em>!  This are values that only store a <em>true</em> or <em>false</em> value. So we need a way to track 3 quests:</p>
+
+<code>
+// Set to false, since they aren't supposed to be done.
+var quest1Complete = false;
+var quest2Complete = false;
+var quest3Complete = false;
+</code>
+
+<p>Now we just need to set them to <em>true</em> when the player does something we want. We can do that in the next example.</p>
+
+<h4>Triggering an Event by Collection an Item.</h4>
+<p>Let's create a quick retrieval quest using the collectableSprite:</p>
+<code>
+var potion = Spawn.collectableSprite(280,280, "assets/images/item-potion-red.png");
+potion.onCollect = function(){
+  quest1Complete = true;
+  Spawn.message("Quest 1 Complete!");
+}
+</code>
+<p>When we pick up the potion, the <em>.onCollect</em> method will execute, which sets one of <em>boolean</em> we set earlier to <em>true</em>. It then also adds a little message telling the player that quest 1 is complete.</p>
+
+<h4>Turning in an Item to an Interactable.</h4>
+<p>Now that we have a potion in our inventory we can use it as a <em>boolean</em> to check with all sorts of things.  Let's create a character that wants a potion.</p>
+<code>
+  var potionPerson = Spawn.interactableSprite(360,280,"assets/images/person-female-2.png");
+
+  // This uses the interact method from an interactableSprite.
+  potionPerson.interact = function(){
+    // Conditional statement used here to check!
+    if( player.hasItem( potion ) === true ){
+      quest2Complete = true;
+      potionPerson.talk("Thanks! Just what I needed!");
+      Spawn.message("Quest 2 Complete!");
+      potionPerson.despawn();
+    } else {
+      potionPerson.talk("I could use a potion right now.");
+    }
+  }
+</code>
+<p>We use a handy method belonging to interactableSprites called <em>hasItem( some_collectable_variable_name )</em>.  This returns a boolean if you pass in the collectable's variable name inside it. If the player picked up the potion earlier, the code will check for it in the inventory when the player talks to the character and tells them they have passed Quest 2 and mark the quest boolean as complete (<em>true</em>). Also, we despawn the potion person so they go away once the quest is complete as well. If they talked to the person before picking up the potion, they will give a different message.</p>
+
+<h4>Using Counters</h4>
+<p>Now let's create a different type of quest. This quest will use a counter to count a goal. We will create an integer variable and start it at '0' and a small function that will add '1' everytime it is called:</p>
+<code>
+  var counter = 0;
+  function addToCounter(){
+    // This is the same as 'counter = counter + 1;'
+    counter++;
+  }
+</code>
+<p>You may have seen the <em>++</em> before and all it does is set the value of the variable 'counter' to it's old value + 1.  So if we run <em>addToCounter()</em> 10 times, our counter variable should have the value of 10.  Let's trigger the function by using the next example.</p>
+
+<h4>Using Enemy Defeats as an Event Trigger</h4>
+<p>Sometimes we want something to happen when we defeat an enemy.  For that we use the <em>onDeath()</em> method belonging to 'Enemy' objects.</p>
+<code>
+  var trex_image = "assets/images/creature-trex.png";
+  // Using a loop to spawn monsters
+  for( var i=0; i<10; i++ ){
+    // Spawns monsters in a line
+    var trexMonster = Spawn.enemy( 200 + (i * tile_size), 80, trex_image );
+    trexMonster.onDeath = function(){
+      addToCounter();
+    }
+  }
+  var simpleWeapon = Spawn.weapon( 120, 160, "assets/images/item-sword-yellow.png");
+</code>
+<p>Whenever a monster dies, it will call the custom made function <em>addToCounter()</em> that will tick the counter. However, now what do we do with the counter.  Sure it can track a number, but it can be useful if it did something when we hit a certain number. Let's modify our <em>addToCounter()</em> to do something more.</p>
+<code>
+  function addToCounter(){
+    if( counter >= 5 && quest3Complete === false ){
+      quest3Complete = true;
+      Spawn.message("You defeated enough monsters!");
+      Spawn.message("Quest 3 Complete!");
+    }
+    counter++;
+  }
+</code>
+<p>Now we turned our custom function into a conditional that will check if we defeated at least 5 monsters <em>AND</em> quest3Complete is not done yet.  The operator <em>&&</em> tells the conditional that both conditions passed into the 'if' statement need to be fulfilled. You can also use the operator <em>||</em> to mean <em>OR</em> where just 1 of the conditions need to be fulfilled to activate.</p>
+
+<h4>Initating Gameover</h4>
+<p>Now that we have 3 or so quests done. We can probably end the game now.  Let's go back to the messageFlag that told us our winning conditions.</p>
+<code>
+  messageFlag.interact = function(){
+    if( player.life < 5 ){
+      Spawn.message('Are you sure you are ok?');
+    }
+
+    // Not very elegant, but it will get the job done!
+    if( quest1Complete === true && quest2Complete === true && quest3Complete === true ){
+      Spawn.message("You did it!");
+      Spawn.gameWin();
+    } else {
+      Spawn.message('Finish 3 quests to win the game.');
+    }
+  } 
+</code>
+<p>This will send the player to the "Game Win" screen using the <em>Spawn.gameWinText</em> when all booleans you set earlier are true when you talk to the flag.  Alternatively you can call the <em>.gameOver()</em> method to send the player to a "Game Over" screen that can display a different message based on <em>Spawn.gameOverText</em>, which can be helpful if you want to force a 'bad' ending.</p>
 <!-- END DOCS -->
 
         </div>
