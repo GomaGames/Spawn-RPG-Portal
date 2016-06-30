@@ -125,11 +125,20 @@ The Hero is the <em>character that the player controls</em> in the game. The her
 
 <h4>Default Hero Speed</h4>
 <p>The <em>optional</em> code to set the hero's walking speed is below. The value will be in the hundreds range. Be sure that the hero skin value is an <span class="highlight-code">integer</span>.</p>
-<code>Settings.hero.default_speed = <span class="highlight-this">number</span>;
+<code>Settings.hero.default_speed = <span class="highlight-this">speed</span>;
 </code>
 
 <p>Here is an example with a value:</p>
 <code class="example">Settings.hero.default_speed = 300;
+</code>
+
+<h4>Default Hero Life</h4>
+<p>The <em>optional</em> code to set the hero's default life is below. Be sure that the life value is an <span class="highlight-code">integer</span>.</p>
+<code>Settings.hero.default_life = <span class="highlight-this">life</span>;
+</code>
+
+<p>Here is an example with a value:</p>
+<code class="example">Settings.hero.default_life = 3;
 </code>
 
 <h3>Spawning the Hero</h3>
@@ -182,6 +191,21 @@ player.life ++ ;
 player.life -- ;
 </code>
 
+<h4>player.hit(number)</h4>
+
+<code class="example"><span class="comment">// hurts the player by the amount of points defined in the argument
+// this would only happen in a function</span>
+player.hit(3) ;
+</code>
+
+<h4>player.die()</h4>
+
+<code class="example"><span class="comment">// forces the player to die
+// this would only happen in a function
+// possibly when some kind of trap is sprung</span>
+player.die() ;
+</code>
+
 <h2 id="objects">Objects</h2>
 
 <div class="icon-left" style="background-image:url('/images/game/images/wall-stone.png')"></div>
@@ -206,7 +230,7 @@ var greatWall = Spawn.object(2*tile, 3*tile);
 
 <p>Now that <em>greatWall</em> exists, you can do the following method. Note that <em>greatWall</em> is an example variable, and you can make it whatever you want, as long as it has proper variable syntax.</p>
 
-<h4>greatWall.despawn</h4>
+<h4>greatWall.despawn( )</h4>
 <code class="example"><span class="comment">// make the object go away
 // this would only happen in a function</span>
 greatWall.despawn();
@@ -233,13 +257,13 @@ greatWall.despawn();
 </code>
 
 <h4>Coin Default Value</h4>
-<p>The <em>optional</em> code to set the default coin value is below. Be sure that the value is an <span class="highlight-code">integer</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
+<p>The <em>optional</em> code to set the default coin value is below. Be sure that the value is an <span class="highlight-code">integer</span>.</p>
 
-<code>Settings.coin.default_points = <span class="highlight-this">number</span>;
+<code>Settings.coin.default_value = <span class="highlight-this">number</span>;
 </code>
 
 <p>Here is an example with a value:</p>
-<code class="example">Settings.coin.default_points = 1;
+<code class="example">Settings.coin.default_value = 1;
 </code>
 
 <h3>Spawning a Coin</h3>
@@ -294,7 +318,8 @@ Settings.freeze.default_skin = "assets/images/item-ice-blue.png";
 </code>
 
 <h4>Powerup Default Durations</h4>
-<p>The <em>optional</em> code to set the default duration of these items is below. Be sure that the value for any of these items is an <span class="highlight-code">integer</span>. These are default setting, so they typically only need to be defined once when the game loads.</p>
+<p>The <em>optional</em> code to set the default duration of these items is below. Be sure that the value for any of these items is an <span class="highlight-code">integer</span>.</p>
+
 <code>Settings.freeze.default_duration = <span class="highlight-this">duration</span>;
 </code>
 <code>Settings.slow.default_duration = <span class="highlight-this">duration</span>;
@@ -344,26 +369,37 @@ Spawn.speed(200, 400, 5, "assets/images/item-wand.png");
 <p>These are all <em>optional</em> settings that affect enemies. Remember that these settings all go at the top of your document, after the <em>Game Win</em> and <em>Game End</em> text, and before the <em>Spawn.game</em> function.</p>
 
 <h4>Enemy Default Skin</h4>
-<p>The <em>optional</em> code to set the default enemy appearance is below. Be sure that the value is a <span class="highlight-code">string</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
+<p>The <em>optional</em> code to set the default enemy appearance is below. Be sure that the value is a <span class="highlight-code">string</span>.</p>
 
-<code>Settings.enemy.default_skin = <span class="highlight-this">"graphic:String"</span>;
+<code>Settings.enemy.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
 </code>
 
 <p>Here is an example with a value:</p>
-<code class="example">Settings.enemy.default_skin = "assets/images/ghost.png";
+<code class="example">Settings.enemy.default_skin = "assets/images/creature-ghost-white.png";
 </code>
 
 <h4>Enemy Default Speed</h4>
-<p>The <em>optional</em> code to set the default enemy speed is below. Be sure that the value is an <span class="highlight-code">integer</span>. This is a default setting, so it typically only needs to be defined once when the game loads.</p>
-<code>Settings.enemy.default_speed = <span class="highlight-this">points:Int</span>;
+<p>The <em>optional</em> code to set the default enemy speed is below. Be sure that the value is an <span class="highlight-code">integer</span>.</p>
+
+<code>Settings.enemy.default_speed = <span class="highlight-this">speed</span>;
 </code>
 
 <p>Here is an example with a value:</p>
 <code class="example">Settings.enemy.default_speed = 100;
 </code>
 
-<h4>Placing an Enemy</h4>
-<p>The first 2 arguments x and y are <span class="highlight-code">integers</span> that spawn an enemy at ( x,y ) position. <em>The first 2 arguments are required.</em></p>
+<h4>Enemy Default Health</h4>
+<p>The <em>optional</em> code to set the default enemy health is below. Be sure that the value is an <span class="highlight-code">integer</span>.</p>
+
+<code>Settings.enemy.default_health = <span class="highlight-this">health</span>;
+</code>
+
+<p>Here is an example with a value:</p>
+<code class="example">Settings.enemy.default_speed = 100;
+</code>
+
+<h3>Spawning an Enemy</h3>
+<p>The first 2 arguments x and y are <span class="highlight-code">integers</span> that spawn an enemy at ( x , y ) position. <em>The first 2 arguments are required.</em></p>
 
 <p>The third argument is a <span class="highlight-code">string</span> that sets the enemy graphic (optional). If it is not set, the default graphic will be used.</p>
 
@@ -371,10 +407,11 @@ Spawn.speed(200, 400, 5, "assets/images/item-wand.png");
 
 <p>The fifth argument is an <span class="highlight-code">integer</span> that sets the enemy speed (optional). If it is not set, the default speed will be used.</p>
 
+<p>The sixth argument is an <span class="highlight-code">integer</span> that sets the enemy health (optional). If it is not set, the default health will be used.</p>
 
 <p>The notated code to spawn an enemy is below:</p>
 
-<code>Spawn.enemy(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">?graphic:String</span>, <span class="highlight-this">?direction:String</span>, <span class="highlight-this">?speed:Int</span>);
+<code>Spawn.enemy( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">"direction"</span> , <span class="highlight-this">speed</span> , <span class="highlight-this">health</span> );
 </code>
 
 <p>Here are some examples of enemies with values:</p>
@@ -392,39 +429,83 @@ Spawn.enemy(200, 400, "assets/images/robot.png", "right", 800);
 
 </code>
 
-<h4>Enemy Methods</h4>
+<h3>Spawning an Enemy, and doing stuff</h3>
+<p>Spawning a wandering enemy doesn't let you do very much. If you want to control when the enemy spawns, give it a variable.</p>
 
-<code><span class="comment">// methods, need docs for these</span>
-
-<span class="comment">// die()</span>
-die()
-
-<span class="comment">// despawn()</span>
-despawn()
+<code class="example"><span class="comment">// create a new variable for your enemy, that is created when the enemy spawns</span>
+var bossMonster = Spawn.enemy(2*tile, 3*tile);
 </code>
 
-<h3 id="collectable-sprites">Collectable Sprites</h3>
+<p>Now that <em>bossMonster</em> exists, you can affect the methods and properties that the enemy has. Note that <em>bossMonster</em> is an example variable, and you can make it whatever you want, as long as it has proper variable syntax.</p>
 
-<div class="icon-left" style="background-image:url('/images/game/images/item-sword-yellow.png')"></div>
-<p>Collectable Sprites are things that <em>can be "picked up"</em> in the game and added to your inventory, such as Weapons, Packages, Scrolls, Potions, and Keys. Collectable sprites can be walked over so they do not block the player's path. See the Game Art page to choose any art asset to set for your collectable sprite. The arguments that must be set for a collectable sprite are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an collectable sprite is below:</p>
+<h4>enemy.hit(number)</h4>
+<code class="example"><span class="comment">// hurts the enemy by the amount of points defined in the argument
+// this would only happen in a function</span>
+enemy.hit(3) ;
+</code>
 
-<code>Spawn.collectableSprite(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">graphic:String</span>);
+<h4>bossMonster.kill( )</h4>
+<code class="example"><span class="comment">// kill the enemy
+// this would only happen in a function</span>
+bossMonster.kill() ;
+</code>
+
+<h4>bossMonster.onDeath = function( ){ }</h4>
+<code class="example">bossMonster.onDeath = function(){
+  <span class="comment">// WHEN kill is initiated, this happens</span>
+}
+</code>
+
+<code class="example">bossMonster.onDeath = function(){
+  if( something-here-is-true ){
+    <span class="comment">// Then trigger this.</span>
+  }else{
+    <span class="comment">// Otherwise, this happens.</span>
+  }
+}
+</code>
+
+<h4>bossMonster.despawn()</h4>
+<code class="example"><span class="comment">// makes the object go away though doesn't trigger "onDeath"
+// this would only happen in a function</span>
+bossMonster.despawn();
+</code>
+
+<h2 id="collectables">Collectable Sprites</h2>
+
+<div class="icon-left" style="background-image:url('/images/game/images/item-key-yellow.png')"></div>
+<p>Collectable Sprites are things that <em>can be "picked up"</em> in the game and added to your inventory when <em>[ ENTER ]</em> is pressed. Collectables include things like Packages, Scrolls, Potions, and Keys. Collectable sprites can be <em>walked through</em> so they do not block the player's path. See the Game Art page to choose any art asset to set for your collectable sprite. The arguments that must be set for a collectable sprite are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. </p>
+
+
+<h3>Spawning a Collectable</h3>
+<p>The notated code to spawn an collectable sprite is below:</p>
+
+<code>Spawn.collectableSprite( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> );
 </code>
 
 <p>Here is an example with values:</p>
 
-<code class="example">Spawn.collectableSprite(200, 400, "assets/images/scroll.png");
+<code class="example">Spawn.collectableSprite(200, 400, "assets/images/item-key-yellow.png");
 </code>
 
-<h4>Collectable Methods</h4>
+<h3>Spawning a Collectable, and doing stuff</h3>
+<p>Spawning a collectable alone is okay, though the objects won't do anything once they are in the hero's inventory. Create a variable, so you can do stuff with the item.</p>
 
-<code><span class="comment">// methods, need docs for these</span>
+<code class="example"><span class="comment">// create a new variable</span>
+var goldenKey = Spawn.collectableSprite(2*tile, 3*tile);
+</code>
 
-<span class="comment">// despawn()</span>
-despawn()
+<p>Now that <em>goldenKey</em> exists, you can do the following methods. Note that <em>goldenKey</em> is an example variable, and you can make it whatever you want, as long as it has proper variable syntax.</p>
 
-<span class="comment">// onCollect()</span>
-onCollect() = function(){
+<h4>goldenKey.despawn( )</h4>
+<code class="example"><span class="comment">// make the collectable go away
+// this would only happen in a function</span>
+goldenKey.despawn();
+</code>
+
+<h4>goldenKey.onCollect = function( ){ }</h4>
+<code class="example"><span class="comment">// WHEN the key is collected, run this function</span>
+goldenKey.onCollect() = function(){
   if(player.coins >= 10){
     <span class="comment">// this happens...</span>
   }else{
@@ -432,6 +513,88 @@ onCollect() = function(){
   }
 }
 </code>
+
+<h2 id="weapons">Weapons</h2>
+
+<div class="icon-left" style="background-image:url('/images/game/images/item-sword-yellow.png')"></div>
+<p>Weapons are collectables that <em>can be "picked up"</em> in the game, added to your inventory, and <em>used to attack enemies</em> when <em>[ ENTER ]</em> is pressed. Weapons can be <em>walked through</em> so they do not block the player's path. See the Game Art page to choose any art asset to set for your weapon. The arguments that must be set for a weapon are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The last argument that can be set is the weapon's power, which by default is 1, and can be set to a <span class="highlight-code">number</span>.</p>
+
+<!--is the graphic optional?-->
+
+<h3>Spawning a Weapon</h3>
+<p>The notated code to spawn an weapon is below:</p>
+
+<code>Spawn.weapon( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">power</span> );
+</code>
+
+<p>Here is an example with values:</p>
+
+<code class="example">Spawn.weapon(200, 400, "assets/images/item-sword-yellow.png");
+</code>
+
+<h3>Spawning a Weapon, and doing stuff</h3>
+<p>Once a weapon is picked up by the hero, it is automatically equipped, and allows the player to attack enemies. If you want to do more than this, create a variable, so you can do more stuff with the item.</p>
+
+<code class="example"><span class="comment">// create a new variable</span>
+var greatSword = Spawn.weapon(2*tile, 3*tile);
+</code>
+
+<p>Now that <em>greatSword</em> exists, you can do the following methods. Note that <em>greatSword</em> is an example variable, and you can make it whatever you want, as long as it has proper variable syntax.</p>
+
+<h4>greatSword.power</h4> 
+<!--not sure if works-->
+<code class="example"><span class="comment">// set the power of the weapon</span>
+greatSword.power = 10 ;
+
+<span class="comment">// increase the power of the weapon
+// this usually happens in a function</span>
+greatSword.power += 2 ;
+</code>
+
+<h4>greatSword.equip( )</h4>
+<p>Typically, the sword would automatically be equipped when picked up. If you want to equip a weapon that exists, though is not being touched by the hero, you can call the equip() function.</p>
+<code class="example"><span class="comment">// equip weapon
+// this would only happen in a function</span>
+greatSword.equip();
+</code>
+
+<h4>greatSword.despawn( )</h4>
+<code class="example"><span class="comment">// make the weapon go away
+// this would only happen in a function</span>
+greatSword.despawn();
+</code>
+
+<h4>greatSword.onCollect = function( ){ }</h4>
+<code class="example"><span class="comment">// WHEN the key is collected, run this function</span>
+greatSword.onCollect() = function(){
+  if(player.coins >= 10){
+    <span class="comment">// this happens...</span>
+  }else{
+    <span class="comment">// otherwise this default happens...</span>
+  }
+}
+</code>
+
+<h2 id="ranged-weapons">Ranged Weapons</h2>
+
+<div class="icon-left" style="background-image:url('/images/game/images/item-bow-and-arrow.png')"></div>
+<p>Ranged Weapons are weapons that <em>can be "picked up"</em> in the game, added to your inventory, and <em>used to attack enemies</em> when <em>[ ENTER ]</em> is pressed. Unlike a weapon, ranged weapons <em>shoot a projectile</em>. Ranged weapons can be <em>walked through</em> so they do not block the player's path. See the Game Art page to choose any art asset to set for your weapon. The arguments that must be set for a weapon are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span>, the next two arguments are set to graphics for the main weapon and the projectile, which are <span class="highlight-code">strings</span>. The next argument that can be set is the weapon's power, which by default is 1, and can be set to a <span class="highlight-code">number</span>. The next 2 arguments are the range of the weapon, and the cooldown of the item, which are both <span class="highlight-code">numbers</span>.</p>
+
+<!--is the graphic optional?-->
+
+<h3>Spawning a Ranged Weapon</h3>
+<p>The notated code to spawn a ranged weapon is below:</p>
+
+<code>Spawn.rangedWeapon( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">power</span> , <span class="highlight-this">range</span> , <span class="highlight-this">cooldown</span> );
+</code>
+
+<p>Here is an example with values:</p>
+
+<code class="example">Spawn.rangedWeapon(200, 400, "assets/images/item-sword-yellow.png", 2, 100, 100);
+</code>
+
+<h3>Spawning a Weapon, and doing stuff</h3>
+<p>You can do the same things you do to regular weapons, to ranged weapons.</p>
 
 <h3 id="interactable-sprites">Interactable Sprites</h3>
 
