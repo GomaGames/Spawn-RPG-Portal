@@ -58,108 +58,58 @@
 
 <h2 id="game">game.js</h2>
 
-<h4>Parts of game.js</h4>
-<p><em>game.js</em> should have this structure. Be sure to put your code in the right parts of the document!</p>
+<code><span class="comment">// GAME STORY</span>
 
-<code><span class="comment">// Game Story</span>
-Spawn.introText = <span class="highlight-this">"Intro Text"</span>;
-Spawn.gameWinText = <span class="highlight-this">"Win Text"</span>;
-Spawn.gameOverText = <span class="highlight-this">"Game Over Text"</span>;
+Settings.introText = <span class="highlight-this">"Intro Text</span>\n\n<span class="highlight-this">Two Lines Long."</span>;
+Settings.gameWinText = <span class="highlight-this">"Win Text"</span>;
+Settings.gameOverText = <span class="highlight-this">"Game Over Text"</span>;
 
-<span class="comment">// Game Settings</span>
-Settings.hero.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-Settings.hero.default_speed = <span class="highlight-this">number</span>;
-Settings.hero.default_life = <span class="highlight-this">number</span>;
+<span class="comment">// SKIP THE INTRO?</span>
+<span class="comment">// Settings.skipIntro = true;</span>
 
-<span class="comment">// Your Game</span>
+<span class="comment">// HERO</span>
+Settings.hero.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
+Settings.hero.default_speed =  ;
+Settings.hero.default_life =  ;
+
+<span class="comment">// ENEMY</span>
+Settings.enemy.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
+Settings.enemy.default_speed =  ;
+Settings.enemy.default_health =  ;
+
+<span class="comment">// COIN</span>
+Settings.coin.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
+Settings.coin.default_value =  ;
+
+<span class="comment">// POWERUPS</span>
+Settings.freeze.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
+Settings.freeze.default_duration =  ;
+Settings.speed.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
+Settings.speed.default_duration =  ;
+Settings.slow.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
+Settings.slow.default_duration =  ;
+
+<span class="comment">// WORLD SIZE</span>
+Settings.worldSize.width =  ;
+Settings.worldSize.height =  ;
+
+<span class="comment">// GAME CODE</span>
 Spawn.game = function(){
-  <span class="comment">// All other game code goes in here.</span>
-
-
-
+  <span class="comment">// Your game code goes here.</span>
 
 
 }
+
 </code>
 
 <h4>Game Story</h4>
 <p>Write intro, win, and lose text to your game. These values must be <span class="highlight-code">strings</span>. If you want to insert a line break, you need to add <em>\n\n</em> to represent a new line.</p>
 
-<code><span class="comment">// Game Story</span>
-Spawn.introText = <span class="highlight-this">"Intro Text"</span>;
-Spawn.gameWinText = <span class="highlight-this">"Win Text"</span>;
-Spawn.gameOverText = <span class="highlight-this">"Game Over Text"</span>;
-</code>
-
 <h4>Game Settings</h4>
-<p>Now, insert all the game settings. Here are all the available settings:</p>
-
-<!--<span class="comment">// STORY</span>
-Settings.skinIntro = <span class="highlight-this">"Text"</span>
-Settings.gameWinText = <span class="highlight-this">"Text"</span>
-Settings.gameOverText = <span class="highlight-this">"Text"</span> -->
-<code><span class="comment">// SKIPS STORY INTRO FOR QUICK DEVELOPMENT</span>
-Settings.skipIntro = <span class="highlight-this">false</span>;
-
-<span class="comment">// HERO</span>
-Settings.hero.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-Settings.hero.default_speed = <span class="highlight-this">number</span>;
-Settings.hero.default_life = <span class="highlight-this">number</span>;
-
-<span class="comment">// ENEMY</span>
-Settings.enemy.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-Settings.enemy.default_speed = <span class="highlight-this">number</span>;
-Settings.enemy.default_health = <span class="highlight-this">number</span>;
-
-<span class="comment">// COIN</span>
-Settings.coin.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-Settings.coin.default_value = <span class="highlight-this">number</span>;
-
-<span class="comment">// POWERUPS</span>
-Settings.freeze.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-Settings.freeze.default_duration = <span class="highlight-this">number</span>;
-Settings.speed.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-Settings.speed.default_duration = <span class="highlight-this">number</span>;
-Settings.slow.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-Settings.slow.default_duration = <span class="highlight-this">number</span>;
-
-<span class="comment">// WORLD SIZE</span>
-Settings.worldSize.width = <span class="highlight-this">number</span>;
-Settings.worldSize.height = <span class="highlight-this">number</span>;
-</code>
-
-<!-- <h4>Game Win Text</h4>
-<p>At the end of a successful game, a message will appear. The game text must be a <span class="highlight-code">string</span>. If you want to insert a line break, you need to add <em>\n\n</em> to represent a new line.</p>
-
-<code>Spawn.gameWinText = <span class="highlight-this">" "</span>;
-</code>
-
-<p>Here is an example of win text:</p>
-
-<code class="example">Spawn.gameWinText = "Congratulations!\n\nYou defeated all the enemies\n\nand saved all the Princesses!";
-</code>
-
-<h4>Game Over Text</h4>
-<p>At the end of a unsuccessful game, a message will appear. The game text must be a <span class="highlight-code">string</span>. If you want to insert a line break, you need to add <em>\n\n</em> to represent a new line.</p>
-
-<code>Spawn.gameOverText = <span class="highlight-this">" "</span>;
-</code>
-
-<p>Here is an example of game over text:</p>
-
-<code class="example">Spawn.gameOverText = "You didn't quite save all the princesses! Try Again!";
-</code>
-
-<h2 id="game-elements">Game Elements</h2> -->
+<p>By default, all the settings will be inactive. Uncomment the lines you want to turn on to override the defaults.</p>
 
 <h4>Game Level</h4>
 <p>You can place many different types of things in SpawnHero RPG. The entire level map will be written inside the <em>Spawn.game</em> function. Don't misplace the closing <em>}</em> at the very end!</p>
-
-<code>Spawn.game = function(){
-  <span class="comment">// Your game code goes here.</span>
-
-
-}</code>
 
 <h2 id="everything">Everything Goes in Spawn.game</h2>
 <p>Besides the settings that are described in the next section, all code goes inside the Spawn.game function.</p>
@@ -176,42 +126,39 @@ The Hero is the <em>character that the player controls</em> in the game. The her
 <p>These are all <em>optional</em> settings that affect the hero. Remember that these settings all go at the top of your document, after the <em>Game Win</em> and <em>Game End</em> text, and before the <em>Spawn.game</em> function.</p>
 
 <h4>Hero Default Skin</h4>
-<p>Be sure that the hero skin value is a <span class="highlight-code">string</span>.</p>
+<p>Be sure that the hero skin value is a <span class="highlight-code">string</span>. Here is an example:</p>
 
-<code>Settings.hero.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-</code>
+<!-- <code>Settings.hero.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
+</code> -->
 
-<p>Here is an example with a value:</p>
-<code class="example">Settings.hero.default_skin = "assets/images/girl-hero.png";
+<code class="example">Settings.hero.default_skin = "assets/images/SOME-GRAPHIC.png";
 </code>
 
 <h4>Default Hero Speed</h4>
-<p>The <em>optional</em> code to set the hero's walking speed is below. The value will be in the hundreds range. Be sure that the hero skin value is an <span class="highlight-code">integer</span>.</p>
-<code>Settings.hero.default_speed = <span class="highlight-this">speed</span>;
-</code>
+<p>The <em>optional</em> code to set the hero's walking speed is below. The value will be in the hundreds range. Be sure that the hero skin value is an <span class="highlight-code">integer</span>. Here is an example:</p>
+<!-- <code>Settings.hero.default_speed = <span class="highlight-this">speed</span>;
+</code> -->
 
-<p>Here is an example with a value:</p>
+<!-- <p>Here is an example:</p> -->
 <code class="example">Settings.hero.default_speed = 300;
 </code>
 
 <h4>Default Hero Life</h4>
-<p>The <em>optional</em> code to set the hero's default life is below. Be sure that the life value is an <span class="highlight-code">integer</span>.</p>
-<code>Settings.hero.default_life = <span class="highlight-this">life</span>;
-</code>
+<p>The <em>optional</em> code to set the hero's default life is below. Be sure that the life value is an <span class="highlight-code">integer</span>. Here is an example with a value:</p>
+<!-- <code>Settings.hero.default_life = <span class="highlight-this">life</span>;
+</code> -->
 
-<p>Here is an example with a value:</p>
 <code class="example">Settings.hero.default_life = 3;
 </code>
 
 <h3>Spawning the Hero</h3>
 
 <h4>Spawn Hero</h4>
-<p>The <em>required</em> code to set the hero's start position is below. You need to spawn <span class="restrictions">1 hero</span> in the game for it to be playable. Be sure that the hero's x and y position are <span class="highlight-code">integers</span>.</p>
+<p>The <em>required</em> code to set the hero's start position is below. You need to spawn <span class="restrictions">1 hero</span> in the game for it to be playable. Be sure that the hero's x and y position are <span class="highlight-code">integers</span>. Here is an example with values:</p>
 
 <code>Spawn.hero( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> );
 </code>
 
-<p>Here is an example with values</p>
 <code class="example"><span class="comment">// setting the tile size to 40 first to make it easy to see the grid.</span>
 var tile = 40;
 
@@ -232,7 +179,7 @@ var player = Spawn.hero(2*tile, 3*tile);
 player.coins = 3 ;
 
 <span class="comment">// add 4 coins to the player's coins
-// this usually happens in a function</span>
+// put this in a function</span>
 player.coins += 4 ;
 </code>
 
@@ -240,61 +187,61 @@ player.coins += 4 ;
 <code class="example"><span class="comment">// set the amount of lives the player has</span>
 player.life = 10 ;
 
-<span class="comment">// add 2 life
-// this usually happens in a function</span>
+<span class="comment">// add 2 life to player
+// put this in a function</span>
 player.life += 2 ;
 
 <span class="comment">// increase life by 1
-// this usually happens in a function</span>
+// put this in a function</span>
 player.life ++ ;
 
 <span class="comment">// subtract a life by 1
-// this usually happens in a function</span>
+// put this in a function</span>
 player.life -- ;
 </code>
 
 <h4>player.hit(number)</h4>
 
 <code class="example"><span class="comment">// hurts the player by the amount of points defined in the argument
-// this would only happen in a function</span>
+// put this in a function</span>
 player.hit(3) ;
 </code>
 
 <h4>player.die()</h4>
 
 <code class="example"><span class="comment">// forces the player to die
-// this would only happen in a function
-// possibly when some kind of trap is sprung</span>
+// possibly when some kind of trap is sprung
+// put this in a function</span>
 player.die() ;
 </code>
 
 <h2 id="objects">Objects</h2>
 
-<div class="icon-left" style="background-image:url('/images/game/images/wall-stone.png')"></div>
+<div class="icon-left" style="background-image:url('/images/game/images/SOME-GRAPHIC.png')"></div>
 <p>Objects are <em>impassable barriers</em> in the game, such as Walls, Trees, Bushes, or Stumps. See the Game Art page to choose any art asset to set for your object. The arguments that must be set for an object are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an object is below:</p>
 
 <h3>Spawning an Object</h3>
 
-<code>Spawn.object( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> );
+<code>Spawn.object( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span> );
 </code>
 
-<p>Here is an example with real values:</p>
+<p>Here is an example with values:</p>
 
-<code class="example">Spawn.object(5*tile, 10*tile, "/assets/images/wall-stone.png");
+<code class="example">Spawn.object(5*tile, 10*tile, "/assets/images/SOME-GRAPHIC.png");
 </code>
 
 <h3>Spawning an Object, and doing stuff</h3>
 <p>Spawning the object alone is OK for defining boundaries and walls. The only thing you can do to an object is spawn or despawn it. If you want to be able to despawn the object later, give the object a variable name. If you want to do anything else to the object besides despawn, you might want a <em>weapon</em>, <em>collectable</em>, or <em>interactable</em> item instead.</p>
 
 <code class="example"><span class="comment">// create a new variable named whatever you want, that is created when the object spawns</span>
-var greatWall = Spawn.object(2*tile, 3*tile);
+var greatWall = Spawn.object(2*tile, 3*tile, "/assets/images/SOME-GRAPHIC.png");
 </code>
 
 <p>Now that <em>greatWall</em> exists, you can do the following method. Note that <em>greatWall</em> is an example variable, and you can make it whatever you want, as long as it has proper variable syntax.</p>
 
 <h4>greatWall.despawn( )</h4>
 <code class="example"><span class="comment">// make the object go away
-// this would only happen in a function</span>
+// put this in a function</span>
 greatWall.despawn();
 </code>
 
@@ -309,35 +256,33 @@ greatWall.despawn();
 <p>These are all <em>optional</em> settings that affect coins. Remember that these settings all go at the top of your document, after the <em>Game Win</em> and <em>Game End</em> text, and before the <em>Spawn.game</em> function.</p>
 
 <h4>Coin Default Skin</h4>
-<p>The <em>optional</em> code to set the default coin appearance is below. Be sure that the value is a <span class="highlight-code">string</span>.</p>
+<p>The <em>optional</em> code to set the default coin appearance is below. Be sure that the value is a <span class="highlight-code">string</span>. Here is an example:</p>
 
-<code>Settings.coin.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-</code>
+<!-- <code>Settings.coin.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
+</code> -->
 
-<p>Here is an example with a value:</p>
-<code class="example">Settings.coin.default_skin = "assets/images/item-gem-blue.png";
+<code class="example">Settings.coin.default_skin = "/assets/images/SOME-GRAPHIC.png";
 </code>
 
 <h4>Coin Default Value</h4>
-<p>The <em>optional</em> code to set the default coin value is below. Be sure that the value is an <span class="highlight-code">integer</span>.</p>
+<p>The <em>optional</em> code to set the default coin value is below. Be sure that the value is an <span class="highlight-code">integer</span>. Here is an example:</p>
 
-<code>Settings.coin.default_value = <span class="highlight-this">number</span>;
-</code>
+<!-- <code>Settings.coin.default_value = <span class="highlight-this">number</span>;
+</code> -->
 
-<p>Here is an example with a value:</p>
 <code class="example">Settings.coin.default_value = 1;
 </code>
 
 <h3>Spawning a Coin</h3>
 <p>The code to place a coin on the screen is below. The arguments that must be set for a coin are the x and y position. The point value and an override coin graphic are optional. A good use of a different graphic is a treasure chest (it is a hidden coin, until you touch it). Be sure that the x and y values are set to <span class="highlight-code">integers</span>, the point value is set to an <span class="highlight-code">integer</span>, and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn a coin is below:</p>
 
-<code>Spawn.coin( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">points</span>, <span class="highlight-this">"some-graphic.png"</span>);
+<code>Spawn.coin( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">points</span>, <span class="highlight-this">"/assets/images/SOME-GRAPHIC.png"</span>);
 </code>
 
 <p>Here are some examples with values:</p>
 
 <code class="example"><span class="comment">// Spawns a coin worth 50 points that uses the crown graphic.</span>
-Spawn.coin(200, 400, 50, "assets/images/item-crown-yellow.png");
+Spawn.coin(200, 400, 50, "/assets/images/SOME-GRAPHIC.png");
 
 <span class="comment">// Spawns a coin worth 10 points that uses the default graphic.</span>
 Spawn.coin(200, 400, 10);
@@ -366,30 +311,29 @@ Spawn.coin(200, 400);
 <p>The <em>optional</em> code to set the default appearance for these items is below. Remember that these settings all go at the top of your document, after the <em>Game Win</em> and <em>Game End</em> text, and before the <em>Spawn.game</em> function. Be sure that the value for any of these items is a <span class="highlight-code">string</span>.</p>
 
 <h4>Powerup Default Skins</h4>
-<code>Settings.freeze.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
+<!-- <code>Settings.freeze.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
 </code>
-<code>Settings.slow.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
+<code>Settings.slow.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
 </code>
-<code>Settings.speed.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
+<code>Settings.speed.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
 </code>
 
-<p>Here are examples with values:</p>
-<code class="example">Settings.speed.default_skin = "assets/images/nature-lightning.png";
-Settings.slow.default_skin = "assets/images/creature-turtle.png";
-Settings.freeze.default_skin = "assets/images/item-ice-blue.png";
+<p>Here are examples with values:</p> -->
+<code class="example">Settings.speed.default_skin = "assets/images/SOME-GRAPHIC.png";
+Settings.slow.default_skin = "assets/images/SOME-GRAPHIC.png";
+Settings.freeze.default_skin = "assets/images/SOME-GRAPHIC.png";
 </code>
 
 <h4>Powerup Default Durations</h4>
-<p>The <em>optional</em> code to set the default duration of these items is below. Be sure that the value for any of these items is an <span class="highlight-code">integer</span>.</p>
+<p>The <em>optional</em> code to set the default duration of these items is below. Be sure that the value for any of these items is an <span class="highlight-code">integer</span>. Here are examples:</p>
 
-<code>Settings.freeze.default_duration = <span class="highlight-this">duration</span>;
+<!-- <code>Settings.freeze.default_duration = <span class="highlight-this">duration</span>;
 </code>
 <code>Settings.slow.default_duration = <span class="highlight-this">duration</span>;
 </code>
 <code>Settings.speed.default_duration = <span class="highlight-this">duration</span>;
-</code>
+</code> -->
 
-<p>Here are examples with a values:</p>
 <code class="example">Settings.freeze.default_duration = 3;
 Settings.slow.default_duration = 3;
 Settings.speed.default_duration = 3;
@@ -398,11 +342,11 @@ Settings.speed.default_duration = 3;
 <h3>Spawning a Freeze, Slow, or Speed Item</h3>
 <p>The code to place a freeze, slow, or speed item on the screen is below. The arguments that must be set for any of these items are the x and y position. The duration and an override graphic are optional. A good use of a different graphic is a trap (it looks like a treasure chest though it's really a item that has an effect on the player when touched). Be sure that the x and y values are set to <span class="highlight-code">integers</span>, the point value is set to an <span class="highlight-code">integer</span>, and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn a one of these items is below:</p>
 
-<code>Spawn.freeze( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">duration</span> , <span class="highlight-this">"some-graphic.png"</span>);
+<code>Spawn.freeze( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">duration</span> , <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>);
 </code>
-<code>Spawn.slow( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">duration</span> , <span class="highlight-this">"some-graphic.png"</span>);
+<code>Spawn.slow( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">duration</span> , <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>);
 </code>
-<code>Spawn.speed( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">duration</span> , <span class="highlight-this">"some-graphic.png"</span>);
+<code>Spawn.speed( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">duration</span> , <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>);
 </code>
 
 <p>Here are some examples with values:</p>
@@ -414,7 +358,7 @@ Spawn.freeze(200, 400);
 Spawn.slow(200, 400, 12);
 
 <span class="comment">// Spawns a Speed item that lasts for a duration of 5 and uses the wand graphic.</span>
-Spawn.speed(200, 400, 5, "assets/images/item-wand.png");
+Spawn.speed(200, 400, 5, "assets/images/SOME-GRAPHIC.png");
 </code>
 
 <h3>Spawning a Powerup, and doing stuff to it?</h3>
@@ -431,32 +375,29 @@ Spawn.speed(200, 400, 5, "assets/images/item-wand.png");
 <p>These are all <em>optional</em> settings that affect enemies. Remember that these settings all go at the top of your document, after the <em>Game Win</em> and <em>Game End</em> text, and before the <em>Spawn.game</em> function.</p>
 
 <h4>Enemy Default Skin</h4>
-<p>The <em>optional</em> code to set the default enemy appearance is below. Be sure that the value is a <span class="highlight-code">string</span>.</p>
+<p>The <em>optional</em> code to set the default enemy appearance is below. Be sure that the value is a <span class="highlight-code">string</span>. Here is an example:</p>
+<!-- 
+<code>Settings.enemy.default_skin = <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>;
+</code> -->
 
-<code>Settings.enemy.default_skin = <span class="highlight-this">"some-graphic.png"</span>;
-</code>
-
-<p>Here is an example with a value:</p>
-<code class="example">Settings.enemy.default_skin = "assets/images/creature-ghost-white.png";
+<code class="example">Settings.enemy.default_skin = "assets/images/SOME-GRAPHIC.png";
 </code>
 
 <h4>Enemy Default Speed</h4>
-<p>The <em>optional</em> code to set the default enemy speed is below. Be sure that the value is an <span class="highlight-code">integer</span>.</p>
+<p>The <em>optional</em> code to set the default enemy speed is below. Be sure that the value is an <span class="highlight-code">integer</span>. Here is an example:</p>
 
-<code>Settings.enemy.default_speed = <span class="highlight-this">speed</span>;
-</code>
+<!-- <code>Settings.enemy.default_speed = <span class="highlight-this">speed</span>;
+</code> -->
 
-<p>Here is an example with a value:</p>
 <code class="example">Settings.enemy.default_speed = 100;
 </code>
 
 <h4>Enemy Default Health</h4>
-<p>The <em>optional</em> code to set the default enemy health is below. Be sure that the value is an <span class="highlight-code">integer</span>.</p>
+<p>The <em>optional</em> code to set the default enemy health is below. Be sure that the value is an <span class="highlight-code">integer</span>. Here is an example:</p>
 
-<code>Settings.enemy.default_health = <span class="highlight-this">health</span>;
-</code>
+<!-- <code>Settings.enemy.default_health = <span class="highlight-this">health</span>;
+</code> -->
 
-<p>Here is an example with a value:</p>
 <code class="example">Settings.enemy.default_speed = 100;
 </code>
 
@@ -474,21 +415,21 @@ Spawn.speed(200, 400, 5, "assets/images/item-wand.png");
 
 <p>The notated code to spawn an enemy is below:</p>
 
-<code>Spawn.enemy( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">health</span> , <span class="highlight-this">"direction"</span> , <span class="highlight-this">speed</span> );
+<code>Spawn.enemy( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span> , <span class="highlight-this">health</span> , <span class="highlight-this">"direction"</span> , <span class="highlight-this">speed</span> );
 </code>
 
 <p>Here are some examples of enemies with values:</p>
 
 <code class="example"><span class="comment">// Spawns an enemy with the robot skin, that does not move.
 // The direction is set though doesn't do anything.</span>
-Spawn.enemy(200, 400, "assets/images/robot.png");
+Spawn.enemy(200, 400, 1, "assets/images/SOME-GRAPHIC.png");
 
 <span class="comment">// Spawns an enemy that moves "up"
 // at the default speed.</span>
-Spawn.enemy(200, 400, "assets/images/robot.png", "up");
+Spawn.enemy(200, 400, 1, "assets/images/SOME-GRAPHIC.png", "up");
 
 <span class="comment">// Spawns an enemy with 5 health that moves right at 800 speed.</span>
-Spawn.enemy(200, 400, "assets/images/robot.png", 5, "right", 800);
+Spawn.enemy(200, 400, 1, "assets/images/SOME-GRAPHIC.png", 5, "right", 800);
 
 </code>
 
@@ -503,13 +444,13 @@ var bossMonster = Spawn.enemy(2*tile, 3*tile);
 
 <h4>enemy.hit(number)</h4>
 <code class="example"><span class="comment">// hurts the enemy by the amount of points defined in the argument
-// this would only happen in a function</span>
+// put this in a function</span>
 enemy.hit(3) ;
 </code>
 
 <h4>bossMonster.kill( )</h4>
 <code class="example"><span class="comment">// kill the enemy
-// this would only happen in a function</span>
+// put this in a function</span>
 bossMonster.kill() ;
 </code>
 
@@ -530,7 +471,7 @@ bossMonster.kill() ;
 
 <h4>bossMonster.despawn()</h4>
 <code class="example"><span class="comment">// makes the object go away though doesn't trigger "onDeath"
-// this would only happen in a function</span>
+// put this in a function</span>
 bossMonster.despawn();
 </code>
 
@@ -543,12 +484,12 @@ bossMonster.despawn();
 <h3>Spawning a Collectable</h3>
 <p>The notated code to spawn an collectable sprite is below:</p>
 
-<code>Spawn.collectableSprite( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> );
+<code>Spawn.collectableSprite( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span> );
 </code>
 
 <p>Here is an example with values:</p>
 
-<code class="example">Spawn.collectableSprite(200, 400, "assets/images/item-key-yellow.png");
+<code class="example">Spawn.collectableSprite(200, 400, "assets/images/SOME-GRAPHIC.png");
 </code>
 
 <h3>Spawning a Collectable, and doing stuff</h3>
@@ -562,7 +503,7 @@ var goldenKey = Spawn.collectableSprite(2*tile, 3*tile);
 
 <h4>goldenKey.despawn( )</h4>
 <code class="example"><span class="comment">// make the collectable go away
-// this would only happen in a function</span>
+// put this in a function</span>
 goldenKey.despawn();
 </code>
 
@@ -587,7 +528,7 @@ goldenKey.onCollect() = function(){
 <h3>Spawning a Weapon</h3>
 <p>The notated code to spawn an weapon is below:</p>
 
-<code>Spawn.weapon( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">power</span> );
+<code>Spawn.weapon( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span> , <span class="highlight-this">power</span> );
 </code>
 
 <p>Here is an example with values:</p>
@@ -610,20 +551,20 @@ var greatSword = Spawn.weapon(2*tile, 3*tile);
 greatSword.power = 10 ;
 
 <span class="comment">// increase the power of the weapon
-// this usually happens in a function</span>
+// put this in a function</span>
 greatSword.power += 2 ;
 </code>
 
 <h4>greatSword.equip( )</h4>
 <p>Typically, the sword would automatically be equipped when picked up. If you want to equip a weapon that exists, though is not being touched by the hero, you can call the equip() function.</p>
 <code class="example"><span class="comment">// equip weapon
-// this would only happen in a function</span>
+// put this in a function</span>
 greatSword.equip();
 </code>
 
 <h4>greatSword.despawn( )</h4>
 <code class="example"><span class="comment">// make the weapon go away
-// this would only happen in a function</span>
+// put this in a function</span>
 greatSword.despawn();
 </code>
 
@@ -648,7 +589,7 @@ greatSword.onCollect() = function(){
 <h3>Spawning a Ranged Weapon</h3>
 <p>The notated code to spawn a ranged weapon is below:</p>
 
-<code>Spawn.rangedWeapon( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">power</span> , <span class="highlight-this">range</span> , <span class="highlight-this">cooldown</span> );
+<code>Spawn.rangedWeapon( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span> , <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span> , <span class="highlight-this">power</span> , <span class="highlight-this">range</span> , <span class="highlight-this">cooldown</span> );
 </code>
 
 <p>Here is an example with values:</p>
@@ -664,12 +605,12 @@ greatSword.onCollect() = function(){
 <div class="icon-left" style="background-image:url('/images/game/images/item-sign-brown.png')"></div>
 <p>Interactable Sprites are <em>impassable barriers that can be "talked to"</em> in the game by pressing <em>[ ENTER ]</em>, such as Shop Owners, Villagers, or Sign Posts. See the Game Art page to choose any art asset to set for your interactable sprite. The arguments that must be set for an interactable sprite are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an interactable sprite is below:</p>
 
-<code>Spawn.interactableSprite(<span class="highlight-this">x</span>, <span class="highlight-this">y</span>, <span class="highlight-this">"some-graphic.png"</span>);
+<code>Spawn.interactableSprite(<span class="highlight-this">x</span>, <span class="highlight-this">y</span>, <span class="highlight-this">"assets/images/SOME-GRAPHIC.png"</span>);
 </code>
 
 <p>Here is an example with values:</p>
 
-<code class="example">Spawn.interactableSprite(200, 400, "assets/images/sign.png");
+<code class="example">Spawn.interactableSprite(200, 400, "assets/images/SOME-GRAPHIC.png");
 </code>
 
 <p>An interactable sprite on its own isn't very useful until we define what happens when the player interacts with the item. We will get to that when we go over some useful <em>functions</em>.</p>
@@ -704,14 +645,14 @@ villager.receiveItem(goldenSword);
 
 <h4>villager.hasItem(itemVariableName)</h4>
 <code class="example"><span class="comment">// checks if the villager has an item
-// this usually happens in a function
+// put this in a function
 // as a conditional check</span>
 villager.hasItem(itemVariableName)
 </code>
 
 <h4>villager.despawn( )</h4>
 <code class="example"><span class="comment">// make the interactable go away
-// this would only happen in a function</span>
+// put this in a function</span>
 villager.despawn();
 </code>
 
@@ -721,6 +662,22 @@ villager.despawn();
 <p>A message is a <em>text popup</em> that displays in the middle of the screen. A message can display when an interactable item is touched, or when some other condition is set. The message must be written as a <span class="highlight-code">string</span>. The notated code to spawn a message is below:</p>
 
 <code>Spawn.message(<span class="highlight-this">"A message string."</span>);
+</code>
+
+<code class="example"><span class="comment">// something</span>
+villager.interact = function(){
+  Spawn.message(<span class="highlight-this">"You did it!."</span>);
+}
+</code>
+
+<code class="example"><span class="comment">// something</span>
+villager.interact = function(){
+  if(player.coins >= 10){
+    Spawn.message(<span class="highlight-this">"You did it!"</span>);
+  }else{
+    Spawn.message(<span class="highlight-this">"You still need to collect some coins."</span>);
+  }
+}
 </code>
 
 <p>A message on its own isn't very useful until it is combined with conditions for when it is triggered. We will get to that when we go over some useful <em>functions</em>.</p>
@@ -735,16 +692,16 @@ villager.despawn();
 // Placing some walls in a line on the game map.
 // Notice only the "x" has changed.
 
-Spawn.object(0, 0, "assets/images/wall-stone.png");
-Spawn.object(40, 0, "assets/images/wall-stone.png");
-Spawn.object(80, 0, "assets/images/wall-stone.png");
-Spawn.object(120, 0, "assets/images/wall-stone.png");
-Spawn.object(160, 0, "assets/images/wall-stone.png");
-Spawn.object(200, 0, "assets/images/wall-stone.png");
-Spawn.object(240, 0, "assets/images/wall-stone.png");
-Spawn.object(280, 0, "assets/images/wall-stone.png");
-Spawn.object(320, 0, "assets/images/wall-stone.png");
-Spawn.object(360, 0, "assets/images/wall-stone.png");
+Spawn.object(0, 0, "assets/images/SOME-GRAPHIC.png");
+Spawn.object(40, 0, "assets/images/SOME-GRAPHIC.png");
+Spawn.object(80, 0, "assets/images/SOME-GRAPHIC.png");
+Spawn.object(120, 0, "assets/images/SOME-GRAPHIC.png");
+Spawn.object(160, 0, "assets/images/SOME-GRAPHIC.png");
+Spawn.object(200, 0, "assets/images/SOME-GRAPHIC.png");
+Spawn.object(240, 0, "assets/images/SOME-GRAPHIC.png");
+Spawn.object(280, 0, "assets/images/SOME-GRAPHIC.png");
+Spawn.object(320, 0, "assets/images/SOME-GRAPHIC.png");
+Spawn.object(360, 0, "assets/images/SOME-GRAPHIC.png");
 
 </code>
 
@@ -754,7 +711,7 @@ Spawn.object(360, 0, "assets/images/wall-stone.png");
 var tile = 40;
 
 // Set a variable we will use for all walls.
-var wall = "assets/images/wall-stone.png";
+var wall = "assets/images/SOME-GRAPHIC.png";
 
 // Place some walls on the game map.
 Spawn.object(0*tile, 0, wall);
@@ -774,7 +731,7 @@ Spawn.object(9*tile, 0, wall);
 var tile = 40;
 
 // Set a variable to use for all walls.
-var wall = "assets/images/wall-stone.png";
+var wall = "assets/images/SOME-GRAPHIC.png";
 
 // Place some walls on the game map with a for loop.
 // Note: This loop starts counting at 0 until 9. 10 total.
@@ -833,8 +790,7 @@ messageFlag.interact = function(){
 <h4>Tracking Progress</h4>
 <p>In order for things to happen in a certain way, we need a way to track things or let the code know something now can be done.  We can do this in a lot of different ways, but one of the simplest ways are <em>booleans</em>!  This are values that only store a <em>true</em> or <em>false</em> value. So we need a way to track 3 quests:</p>
 
-<code>
-// Set to false, since they aren't supposed to be done.
+<code class="example">// Set to false, since they aren't supposed to be done.
 var quest1Complete = false;
 var quest2Complete = false;
 var quest3Complete = false;
@@ -844,8 +800,7 @@ var quest3Complete = false;
 
 <h4>Triggering an Event by Collection an Item.</h4>
 <p>Let's create a quick retrieval quest using the collectableSprite:</p>
-<code>
-var potion = Spawn.collectableSprite(280,280, "assets/images/item-potion-red.png");
+<code class="example">var potion = Spawn.collectableSprite(280,280, "assets/images/item-potion-red.png");
 potion.onCollect = function(){
   quest1Complete = true;
   Spawn.message("Quest 1 Complete!");
@@ -855,78 +810,75 @@ potion.onCollect = function(){
 
 <h4>Turning in an Item to an Interactable.</h4>
 <p>Now that we have a potion in our inventory we can use it as a <em>boolean</em> to check with all sorts of things.  Let's create a character that wants a potion.</p>
-<code>
-  var potionPerson = Spawn.interactableSprite(360,280,"assets/images/person-female-2.png");
+<code class="example">var potionPerson = Spawn.interactableSprite(360,280,"assets/images/person-female-2.png");
 
-  // This uses the interact method from an interactableSprite.
-  potionPerson.interact = function(){
-    // Conditional statement used here to check!
-    if( player.hasItem( potion ) === true ){
-      quest2Complete = true;
-      potionPerson.talk("Thanks! Just what I needed!");
-      Spawn.message("Quest 2 Complete!");
-      potionPerson.despawn();
-    } else {
-      potionPerson.talk("I could use a potion right now.");
-    }
+// This uses the interact method from an interactableSprite.
+potionPerson.interact = function(){
+  // Conditional statement used here to check!
+  if( player.hasItem( potion ) === true ){
+    quest2Complete = true;
+    potionPerson.talk("Thanks! Just what I needed!");
+    Spawn.message("Quest 2 Complete!");
+    potionPerson.despawn();
+  } else {
+    potionPerson.talk("I could use a potion right now.");
   }
+}
 </code>
 <p>We use a handy method belonging to interactableSprites called <em>hasItem( some_collectable_variable_name )</em>.  This returns a boolean if you pass in the collectable's variable name inside it. If the player picked up the potion earlier, the code will check for it in the inventory when the player talks to the character and tells them they have passed Quest 2 and mark the quest boolean as complete (<em>true</em>). Also, we despawn the potion person so they go away once the quest is complete as well. If they talked to the person before picking up the potion, they will give a different message.</p>
 
 <h4>Using Counters</h4>
 <p>Now let's create a different type of quest. This quest will use a counter to count a goal. We will create an integer variable and start it at '0' and a small function that will add '1' everytime it is called:</p>
-<code>
-  var counter = 0;
-  function addToCounter(){
-    // This is the same as 'counter = counter + 1;'
-    counter++;
-  }
+<code class="example">var counter = 0;
+function addToCounter(){
+  // This is the same as 'counter = counter + 1;'
+  counter++;
+}
 </code>
 <p>You may have seen the <em>++</em> before and all it does is set the value of the variable 'counter' to its old value + 1.  So if we run <em>addToCounter()</em> 10 times, our counter variable should have the value of 10.  Let's trigger the function by using the next example.</p>
 
 <h4>Using Enemy Defeats as an Event Trigger</h4>
 <p>Sometimes we want something to happen when we defeat an enemy.  For that we use the <em>onDeath()</em> method belonging to 'Enemy' objects.</p>
-<code>
-  var trex_image = "assets/images/creature-trex.png";
-  // Using a loop to spawn monsters
-  for( var i=0; i<10; i++ ){
-    // Spawns monsters in a line
-    var trexMonster = Spawn.enemy( 200 + (i * tile_size), 80, trex_image );
-    trexMonster.onDeath = function(){
-      addToCounter();
-    }
+<code class="example">var trex_image = "assets/images/creature-trex.png";
+// Using a loop to spawn monsters
+for( var i=0; i<10; i++ ){
+  // Spawns monsters in a line
+  var trexMonster = Spawn.enemy( 200 + (i * tile_size), 80, trex_image );
+  trexMonster.onDeath = function(){
+    addToCounter();
   }
-  var simpleWeapon = Spawn.weapon( 120, 160, "assets/images/item-sword-yellow.png");
+}
+var simpleWeapon = Spawn.weapon( 120, 160, "assets/images/item-sword-yellow.png");
 </code>
+
 <p>Whenever a monster dies, it will call the custom made function <em>addToCounter()</em> that will tick the counter. However, now what do we do with the counter.  Sure it can track a number, but it can be useful if it did something when we hit a certain number. Let's modify our <em>addToCounter()</em> to do something more.</p>
-<code>
-  function addToCounter(){
-    if( counter >= 5 && quest3Complete === false ){
-      quest3Complete = true;
-      Spawn.message("You defeated enough monsters!");
-      Spawn.message("Quest 3 Complete!");
-    }
-    counter++;
+
+<code class="example">function addToCounter(){
+  if( counter >= 5 && quest3Complete === false ){
+    quest3Complete = true;
+    Spawn.message("You defeated enough monsters!");
+    Spawn.message("Quest 3 Complete!");
   }
+  counter++;
+}
 </code>
 <p>Now we turned our custom function into a conditional that will check if we defeated at least 5 monsters <em>AND</em> quest3Complete is not done yet.  The operator <em>&&</em> tells the conditional that both conditions passed into the 'if' statement need to be fulfilled. You can also use the operator <em>||</em> to mean <em>OR</em> where just 1 of the conditions need to be fulfilled to activate.</p>
 
 <h4>Initating Gameover</h4>
 <p>Now that we have 3 or so quests done. We can probably end the game now.  Let's go back to the messageFlag that told us our winning conditions.</p>
-<code>
-  messageFlag.interact = function(){
-    if( player.life < 5 ){
-      Spawn.message('Are you sure you are ok?');
-    }
+<code class="example">messageFlag.interact = function(){
+  if( player.life < 5 ){
+    Spawn.message('Are you sure you are ok?');
+  }
 
-    // Not very elegant, but it will get the job done!
-    if( quest1Complete === true && quest2Complete === true && quest3Complete === true ){
-      Spawn.message("You did it!");
-      Spawn.gameWin();
-    } else {
-      Spawn.message('Finish 3 quests to win the game.');
-    }
-  } 
+  // Not very elegant, but it will get the job done!
+  if( quest1Complete === true && quest2Complete === true && quest3Complete === true ){
+    Spawn.message("You did it!");
+    Spawn.gameWin();
+  } else {
+    Spawn.message('Finish 3 quests to win the game.');
+  }
+} 
 </code>
 <p>This will send the player to the "Game Win" screen using the <em>Spawn.gameWinText</em> when all booleans you set earlier are true when you talk to the flag.  Alternatively you can call the <em>.gameOver()</em> method to send the player to a "Game Over" screen that can display a different message based on <em>Spawn.gameOverText</em>, which can be helpful if you want to force a 'bad' ending.</p>
 <!-- END DOCS -->
