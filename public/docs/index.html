@@ -465,15 +465,16 @@ Spawn.speed(200, 400, 5, "assets/images/item-wand.png");
 
 <p>The third argument is a <span class="highlight-code">string</span> that sets the enemy graphic (optional). If it is not set, the default graphic will be used.</p>
 
-<p>The fourth argument is a <span class="highlight-code">string</span> that is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will initially start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). If no direction is set, the enemy will not move until something hits it.</p>
+<p>The fourth argument is an <span class="highlight-code">integer</span> that sets the enemy health (optional). If it is not set, the default health will be used.</p>
 
-<p>The fifth argument is an <span class="highlight-code">integer</span> that sets the enemy speed (optional). If it is not set, the default speed will be used.</p>
+<p>The fifth argument is a <span class="highlight-code">string</span> that is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will initially start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). If no direction is set, the enemy will not move until something hits it.</p>
 
-<p>The sixth argument is an <span class="highlight-code">integer</span> that sets the enemy health (optional). If it is not set, the default health will be used.</p>
+<p>The sixth argument is an <span class="highlight-code">integer</span> that sets the enemy speed (optional). If it is not set, the default speed will be used.</p>
+
 
 <p>The notated code to spawn an enemy is below:</p>
 
-<code>Spawn.enemy( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">"direction"</span> , <span class="highlight-this">speed</span> , <span class="highlight-this">health</span> );
+<code>Spawn.enemy( <span class="highlight-this">x</span> , <span class="highlight-this">y</span> , <span class="highlight-this">"some-graphic.png"</span> , <span class="highlight-this">health</span> , <span class="highlight-this">"direction"</span> , <span class="highlight-this">speed</span> );
 </code>
 
 <p>Here are some examples of enemies with values:</p>
@@ -486,8 +487,8 @@ Spawn.enemy(200, 400, "assets/images/robot.png");
 // at the default speed.</span>
 Spawn.enemy(200, 400, "assets/images/robot.png", "up");
 
-<span class="comment">// Spawns an enemy that moves right at 800 speed.</span>
-Spawn.enemy(200, 400, "assets/images/robot.png", "right", 800);
+<span class="comment">// Spawns an enemy with 5 health that moves right at 800 speed.</span>
+Spawn.enemy(200, 400, "assets/images/robot.png", 5, "right", 800);
 
 </code>
 
