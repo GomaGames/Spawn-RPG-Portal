@@ -671,7 +671,7 @@ greatSword.onCollect() = function(){
 <code class="example">Spawn.interactableSprite(200, 400, "assets/images/sign.png");
 </code>
 
-<p>An interactable sprite on it's own isn't very useful until we define what happens when the player interacts with the item. We will get to that when we go over some useful <em>functions</em>.</p>
+<p>An interactable sprite on its own isn't very useful until we define what happens when the player interacts with the item. We will get to that when we go over some useful <em>functions</em>.</p>
 
 <h3>Spawning an Interactable, and doing stuff</h3>
 <p>Spawning an interactable alone doesn't let you do very much. It is much more useful to give your interactable a variable, so you can do more stuff with it.</p>
@@ -722,7 +722,7 @@ villager.despawn();
 <code>Spawn.message(<span class="highlight-this">message:String</span>);
 </code>
 
-<p>A message on it's own isn't very useful until it is combined with conditions for when it is triggered. We will get to that when we go over some useful <em>functions</em>.</p>
+<p>A message on its own isn't very useful until it is combined with conditions for when it is triggered. We will get to that when we go over some useful <em>functions</em>.</p>
 
 <h2 id="examples">Examples</h2>
 
@@ -768,7 +768,7 @@ Spawn.object(8*tile, 0, wall);
 Spawn.object(9*tile, 0, wall);
 
 </code>
-<p>Great! Now you have reduced the need for having to type the whole file name of the image every time by using a shorter variable name to remember it by. Now you can make it even less redundant by using a <em>for loop</em> to make it even less redundant:</p>
+<p>Great! Now you have reduced the need for having to type the whole file name of the image every time by using a shorter variable name to remember it by. Now you can make it even less redundant by using a <em>for loop</em>:</p>
 <code class="example">// Set a variable for the tile size.
 var tile = 40;
 
@@ -881,7 +881,7 @@ potion.onCollect = function(){
     counter++;
   }
 </code>
-<p>You may have seen the <em>++</em> before and all it does is set the value of the variable 'counter' to it's old value + 1.  So if we run <em>addToCounter()</em> 10 times, our counter variable should have the value of 10.  Let's trigger the function by using the next example.</p>
+<p>You may have seen the <em>++</em> before and all it does is set the value of the variable 'counter' to its old value + 1.  So if we run <em>addToCounter()</em> 10 times, our counter variable should have the value of 10.  Let's trigger the function by using the next example.</p>
 
 <h4>Using Enemy Defeats as an Event Trigger</h4>
 <p>Sometimes we want something to happen when we defeat an enemy.  For that we use the <em>onDeath()</em> method belonging to 'Enemy' objects.</p>
