@@ -664,7 +664,7 @@ greatSword.onCollect() = function(){
 <div class="icon-left" style="background-image:url('/images/game/images/item-sign-brown.png')"></div>
 <p>Interactable Sprites are <em>impassable barriers that can be "talked to"</em> in the game by pressing <em>[ ENTER ]</em>, such as Shop Owners, Villagers, or Sign Posts. See the Game Art page to choose any art asset to set for your interactable sprite. The arguments that must be set for an interactable sprite are the x and y position, and the graphic. Be sure that the x and y values are set to <span class="highlight-code">integers</span> and the graphic is set to a <span class="highlight-code">string</span>. The notated code to spawn an interactable sprite is below:</p>
 
-<code>Spawn.interactableSprite(<span class="highlight-this">x:Int</span>, <span class="highlight-this">y:Int</span>, <span class="highlight-this">graphic:String</span>);
+<code>Spawn.interactableSprite(<span class="highlight-this">x</span>, <span class="highlight-this">y</span>, <span class="highlight-this">"some-graphic.png"</span>);
 </code>
 
 <p>Here is an example with values:</p>
@@ -720,7 +720,7 @@ villager.despawn();
 <h2 id="messages">Messages</h2>
 <p>A message is a <em>text popup</em> that displays in the middle of the screen. A message can display when an interactable item is touched, or when some other condition is set. The message must be written as a <span class="highlight-code">string</span>. The notated code to spawn a message is below:</p>
 
-<code>Spawn.message(<span class="highlight-this">message:String</span>);
+<code>Spawn.message(<span class="highlight-this">"A message string."</span>);
 </code>
 
 <p>A message on its own isn't very useful until it is combined with conditions for when it is triggered. We will get to that when we go over some useful <em>functions</em>.</p>
